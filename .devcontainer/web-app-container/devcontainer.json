@@ -5,7 +5,7 @@
     	"dockerfile": "Dockerfile"
   	},
 
-	"postStartCommand": "flask --app 40_Realisation/web_app/app run --host=0.0.0.0 --port=5001 --debug",
+	"postStartCommand": "flask --app src/app run --host=0.0.0.0 --port=5001 --debug",
 	"runArgs": [
 		"-p", "0.0.0.0:5001:5001"
 	],
