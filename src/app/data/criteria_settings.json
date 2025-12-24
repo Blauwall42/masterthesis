@@ -1,0 +1,136 @@
+[
+    {   
+        "group_name": "Allgemein",
+        "features": [
+            {"name": "Alter", "type": "number"},
+            {"name": "Geschlecht", "type": "select", "options": ["Männlich", "Weiblich"]},
+            {"name": "Familienstand", "type": "select", "options": ["geschieden oder getrennt lebend", "ledig", "verheiratet oder in Partnerschaft", "verwitwet"]},
+            {"name": "Haushalt", "type": "select", "options": ["Privathaushalt, allein", "Zweipersonenhaushalt", "Mehr-Personenhaushalt", "Seniorenheim / Pflegeheim"]},
+            {"name": "Bildungsjahre", "type": "number"},
+            {"name": "Schulabschluss", "type": "select", "options": ["Kein Schulabschluss - max. 7 Jahre", "Volksschulabschluss", "Hauptschulabschluss", "Mittlerer Schulabschluss - Mittlere Reife", "Anderer Schulabschluss", "Fachabitur", "Abitur"]},
+            {"name": "BMI", "type": "number"}
+        ]
+    },{
+        "group_name": "Sensorik",
+        "features": [
+            {"name": "Gehör", "type": "select", "options": ["Keine Beeinträchtigung", "Leichte Schwerhörigkeit"]},
+            {"name": "Sehvermögen", "type": "number"},
+            {"name": "Visus", "type": "number"}
+        ]
+    },{   
+        "group_name": "Risikofaktoren",
+        "features": [
+            {"name": "Alkoholkonsum", "type": "select", "options": ["Ja", "Nein"]},
+            {"name": "Alkoholmissbrauch", "type": "select", "options": ["Ja", "Nein"]},
+            {"name": "Rauchen", "type": "select", "options": ["Aktuell", "Ehemalig", "Nie"]},
+            {"name": "Raucherjahre", "type": "number"},
+            {"name": "Pack Years", "type": "number"},
+            {"name": "Zigaretten pro Tag", "type": "number"}
+        ]
+    },{   
+        "group_name": "Neuropsychologische Tests",
+        "features": [
+            {"name": "ADAS11", "type": "number"},
+            {"name": "ADAS13", "type": "number"},
+            {"name": "CDRSB", "type": "number"},
+            {"name": "EcogPtTotal", "type": "number"},
+            {"name": "EcogSPTotal", "type": "number"},
+            {"name": "FAQ", "type": "number"},
+            {"name": "FCSRT - Free Recall", "type": "number"},
+            {"name": "FCSRT - Cued Recall", "type": "number"},
+            {"name": "FCSRT - Total Recall", "type": "number"},
+            {"name": "Figuren abzeichnen", "type": "number"},
+            {"name": "LDELTOTAL", "type": "number"},
+            {"name": "MMSE", "type": "number"},
+            {"name": "MOCA", "type": "number"},
+            {"name": "MWT-B", "type": "number"},
+            {"name": "RAVLT-forgetting", "type": "number"},
+            {"name": "RAVLT-immediate", "type": "number"},
+            {"name": "RAVLT-learning", "type": "number"},
+            {"name": "SDMT - gegebene Antworten", "type": "number"},
+            {"name": "SDMT - richtige Antworten", "type": "number"},
+            {"name": "SDMT - Verhältnis korrekt/bearbeitet", "type": "number"},
+            {"name": "SDMT - Erinnerte Symbole", "type": "number"},
+            {"name": "SDMT - Symbol-Zahlen-Paare", "type": "number"},
+            {"name": "TMT A", "type": "number"},
+            {"name": "TMT B", "type": "number"},
+            {"name": "TMT B/A", "type": "number"},
+            {"name": "Uhren zeichen", "type": "number"},
+            {"name": "Uhren abzeichnen", "type": "number"},
+            {"name": "Verbale Flüssigkeit", "type": "number"},
+            {"name": "WMS-4 LM I", "type": "number"},
+            {"name": "WMS-4 LM II", "type": "number"},
+            {"name": "WMS-R - Vorwärts", "type": "number"},
+            {"name": "WMS-R - Rückwärts", "type": "number"},
+            {"name": "WMS-R - Gesamt", "type": "number"}
+        ]
+    },
+    {   
+        "group_name": "Liquoranalyse",
+        "features": [
+            {"name": "Beta-Amyloid 38", "type": "number"},
+            {"name": "Beta-Amyloid 40", "type": "number"},
+            {"name": "Beta-Amyloid 42", "type": "number"},
+            {"name": "Phospho-Tau-181", "type": "number"},
+            {"name": "Gesamt-Tau", "type": "number"},
+            {"name": "Ratio Beta-Amyloid 42/40", "type": "number"},
+            {"name": "Ratio Beta-Amyloid 42/P-tau181", "type": "number"}
+        ]
+    },
+    {   
+        "group_name": "Bildgebung",
+        "features": [
+            {"name": "AV45", "type": "number"},
+            {"name": "Entorhinal", "type": "number"},
+            {"name": "Fusiform", "type": "number"},
+            {"name": "Gesamtgehirn", "type": "number"},
+            {"name": "Hippocampus", "type": "number"},
+            {"name": "MidTemp", "type": "number"},
+            {"name": "Ventrikel", "type": "number"},
+            {"name": "ICV", "type": "number"},
+            {"name": "Ratio Ventrikel-ICV", "type": "number"},
+            {"name": "Ratio Hippocampus-ICV", "type": "number"},
+            {"name": "Ratio Entorhinal-ICV", "type": "number"},
+            {"name": "Ratio Fusiform-ICV", "type": "number"},
+            {"name": "Ratio MidTemp-ICV", "type": "number"},
+            {"name": "Ratio Gesamtgehirn-ICV", "type": "number"},
+            {"name": "Nucleus accumbens", "type": "number"},
+            {"name": "Ratio Nucleus accumbens-ICV", "type": "number"},
+            {"name": "Amygdala", "type": "number"},
+            {"name": "Ratio Amygdala-ICV", "type": "number"},
+            {"name": "Hirnstamm", "type": "number"},
+            {"name": "Ratio Hirnstamm-ICV", "type": "number"},
+            {"name": "Caudate", "type": "number"},
+            {"name": "Ratio Caudate-ICV", "type": "number"},
+            {"name": "Corpus callosum", "type": "number"},
+            {"name": "Ratio Corpus callosum-ICV", "type": "number"},
+            {"name": "Cerebellum", "type": "number"},
+            {"name": "Ratio Cerebellum-ICV", "type": "number"},
+            {"name": "Cortex", "type": "number"},
+            {"name": "Ratio Cortex-ICV", "type": "number"},
+            {"name": "Cerebrum - W. Substanz", "type": "number"},
+            {"name": "Ratio Cerebrum - W. Substanz-ICV", "type": "number"},
+            {"name": "Laterale Ventrikel", "type": "number"},
+            {"name": "Ratio Laterale Ventrikel-ICV", "type": "number"},
+            {"name": "Lat.-inf. Ventrikel", "type": "number"},
+            {"name": "Ratio Lat.-inf. Ventrikel-ICV", "type": "number"},
+            {"name": "Chiasma opticum", "type": "number"},
+            {"name": "Pallidum", "type": "number"},
+            {"name": "Ratio Pallidum-ICV", "type": "number"},
+            {"name": "Putamen", "type": "number"},
+            {"name": "Ratio Putamen-ICV", "type": "number"},
+            {"name": "Thalamus", "type": "number"},
+            {"name": "Ratio Thalamus-ICV", "type": "number"},
+            {"name": "White Matter Hypointensities", "type": "number"}            
+        ]
+    },
+    {
+        "group_name": "Genanalyse",
+        "features": [
+            {"name": "ApoE2", "type": "number"},
+            {"name": "ApoE3", "type": "number"},
+            {"name": "ApoE4", "type": "number"}
+        ]
+    }
+]
+

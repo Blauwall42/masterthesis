@@ -1,0 +1,34 @@
+<div class="tabs">
+  <div class="tabs_header">
+    <button id="net_container_btn" class="tab_btn" onclick="interaction.open_tab('net_container')">Bayessches Netz</button>
+    <button id="tab_guideline_btn" class="tab_btn outline" onclick="interaction.open_tab('tab_guideline')">Leitlinie</button>
+  </div>
+  <div class="tabs_body">
+    <div id="net_container" class="tab card">
+      {% include 'bayesian_net_view.html' %}
+    </div>
+    <div id="tab_guideline" class="tab card hidden"></div>
+  </div>
+  <!-- <input type="radio" name="tabs" id="network_view" checked="checked">
+  <label for="network_view">Bayessches Netz</label> -->
+  
+  <!-- <input type="radio" name="tabs" id="guideline_view">
+  <label for="guideline_view">Leitlinie</label>
+  <div class="tab">
+    -->
+  <!-- </div> -->
+  
+  <!-- <input type="radio" name="tabs" id="shap_local_view">
+  <label for="shap_local_view">SHAP: Lokal</label>
+  <div class="tab">
+    <h4>Tab Three Content</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </div>
+
+  <input type="radio" name="tabs" id="shap_global_view">
+  <label for="shap_global_view">SHAP: Global</label>
+  <div class="tab">
+    <h4>Tab Three Content</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </div> -->
+</div>

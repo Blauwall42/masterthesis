@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <title>CDSS für die Demenzdiagnostik</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@6.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.0.2"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="{{ url_for('static', filename='js/cola.min.js')}}"></script>
+
+    <script src="{{ url_for('static', filename='js/file_handling.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/search.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/Graph.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/DonutChart.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/inference.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/Network.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/UndoRedoHandler.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/GuidelineHandler.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/Interaction.js')}}" defer></script>
+</head>
+
+<body>
+<header class="container-fluid patient-header">
+    <nav>
+      <ul>
+        <li>
+            <strong id="patient_name">N/A</strong>
+            <span class="patient-info">
+                <small>ID:</small>
+                <small id="patient_id">N/A</small> 
+                <small>•</small>
+                <small>Geb:</small>
+                <small id="patient_bday">N/A</small>
+            </span>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+            <button class="smaller-icon-btn" onclick="">
+                <span class="material-icons">help</span>
+            </button>
+        </li>
+        <li>
+            <button class="smaller-icon-btn" onclick="settings_modal.showModal()">
+                <span class="material-icons">settings</span>
+            </button>
+        </li>
+      </ul>
+    </nav>
+    <dialog id="settings_modal">
+        <article>
+            <header>
+                <button aria-label="Close" rel="prev" onclick="settings_modal.close()"></button>
+                <h3>Einstellungen</h3>
+            </header>
+            <nav>
+                <ul>
+                    <li><button class="" onclick="add_new_patient()">Neu</button></li>
+                    <li><button class="" onclick="import_patient()"><span class="material-icons">upload</span></button></li>
+                    <li><button class="" onclick="export_patient()"><span class="material-icons">download</span></button></li>
+                    <input style="display: none;" type="file" id="import_file_input" accept=".json">
+                </ul>
+                <ul>
+                    <li><button class="" onclick="interaction.toggle_theme()"><span class="material-icons">brightness_4</span></button></li>
+                </ul>
+            </nav>    
+            <div>                    
+                <label for="patient_id_input">Patient-ID</label>
+                <input type="text" id="patient_id_input" value="" placeholder="ID">
+
+                <label for="patient_surname_input">Nachname</label>
+                <input type="text" id="patient_surname_input" value="" placeholder="Nachname">
+
+                <label for="patient_name_input">Vorname</label>
+                <input type="text" id="patient_name_input" value="" placeholder="Vorname">
+
+                <label for="patient_bday_input">Geburtstag</label>
+                <input type="date" id="patient_bday_input" value="">
+
+                <label for="patient_gender_input">Geschlecht</label>
+                <select type="date" id="patient_gender_input">
+                    <option>Bitte auswählen</option>
+                    <hr />
+                    <option>Männlich</option>
+                    <option>Weiblich</option>
+                </select>
+                <button onclick="interaction.change_patient_data()">Änderungen anwenden</button>
+            </div>
+            
+        </article>
+    </dialog>
+  </header>
+
+<div class="grid-container">
+    {% block content %}{% endblock %}
+</div>
+
+<button class="secondary material-icons scollup-btn" onclick="interaction.scroll_to_top()">keyboard_arrow_up</button>
+
+<script>
+    var criteria_settings = {{ criteria | tojson }}
+    var category_list = {{ category_list | tojson }}
+    var card_data = {{ cards | tojson }}
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+pgmpy
+pyyaml
+pyparsing
+pandas
+scikit-learn
+daft-pgm
+joblib
+pygraphviz
+openpyxl

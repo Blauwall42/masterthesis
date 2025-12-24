@@ -1,0 +1,516 @@
+* {
+    box-sizing: border-box;
+}
+
+/* General */
+
+.hidden {
+    display: none !important;
+}
+
+.scollup-btn {
+    position: fixed;
+    right: var(--pico-spacing);
+    bottom: var(--pico-spacing);
+    padding: 0.5em;
+}
+
+.grid-container {
+    padding: var(--pico-spacing);
+    display: flex;
+    flex-direction: column;
+    gap: var(--pico-spacing);
+    min-height: 0;
+}
+
+.grid-item {
+    padding: 0.5em;
+    border: var(--pico-muted-border-color) solid var(--pico-border-width);
+    border-radius: var(--pico-border-radius);
+}
+
+.card {
+    padding: var(--pico-spacing);
+    background-color: var(--pico-background-color);
+    border: solid var(--pico-border-width) var(--pico-card-border-color);
+    border-radius: var(--pico-border-radius);
+}
+
+
+.add-btn {
+    background-color: var(--pico-ins-color);
+    border-color: var(--pico-ins-color);
+}
+
+.add-btn:hover, .add-btn:focus {
+    background-color: var(--pico-form-element-valid-border-color);
+}
+
+.remove-btn {
+    background-color: var(--pico-del-color);
+    border-color: var(--pico-del-color);
+}
+
+.remove-btn:hover, .remove-btn:focus {
+    background-color: var(--pico-form-element-invalid-border-color);
+}
+
+
+
+/* Icons */
+.material-symbols-outlined, 
+.material-icons {
+    font-size: 1.25em; 
+    vertical-align: text-bottom;
+}
+
+.smaller-icon-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem;
+}
+
+/* Header */
+.patient-header {
+    padding-block: 0;
+    border-bottom-style: solid;
+
+    border-bottom: var(--pico-muted-border-color) solid var(--pico-border-width);
+}
+
+.what_if_case_settings {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pico-spacing);
+}
+
+.what_if_case_settings > select, .what_if_case_settings > input {
+    margin-bottom: 0;
+}
+
+.what_if_case_settings_btn_container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+    text-align: center;
+}
+
+#infer_btn {
+    width: 100%;
+}
+
+#criteria_list_container {
+    overflow-y: scroll;
+    max-height: 50vh;
+}
+
+/* Criteria */
+.criteria-list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--pico-spacing);
+}
+
+.criteria-list > details {
+    margin-bottom: 0;
+}
+
+.criteria-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.criteria-label {
+    width: 100%;;
+}
+
+.criteria-input {
+    flex: 1;
+}
+
+.criteria-btn {
+    flex: none;
+}
+
+.criteria-item.empty > .remove-btn {
+    display: none;
+}
+
+.criteria-item:not(.empty) > .add-btn{
+    display: none;
+}
+
+body:has(#hide_empty_criteria_switch:checked) .criteria-item.empty {
+    display: none;
+}
+
+
+#prediction_view {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 2em;
+    max-height: 16em;
+    /* min-height: 10em; */
+}
+
+.prediction-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em;
+    max-width: 10em;
+    max-height: 100%;
+    justify-content: center;
+}
+
+
+.prediction-container > * {
+    flex-shrink: 1;
+}
+
+.Donut-Container {
+    max-width: 10em;
+    max-height: 10em;
+}
+
+.Donut-Container, .Donut-Container > svg {
+    width: 100%;
+    height: 100%;
+}
+
+#bayesian_network {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--pico-border-radius);
+}
+
+#net_container {
+    position: relative;
+    padding: 0;
+}
+
+#node_details {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* width: 10em;
+    height: 10em; */
+}
+
+.details_row {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: space-between;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    width: 100%;
+    height: 100%;
+}
+
+.tabs_header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    width: 100%;
+}
+
+.tab_btn {
+    flex: 1;
+}
+
+.tabs_body {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+}
+
+.tab {
+    width: 100%;
+    height: 100%;
+
+}
+
+
+
+#criteria_view {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    height: 100%;
+    overflow-y: hidden;
+    gap: var(--pico-spacing);
+}
+
+/* Network */
+.node { cursor: move; }
+
+
+
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+    stroke-width: 2px;
+}
+
+.group-rect {
+    min-width: 25em;
+    min-height: 25em;
+    fill: #f0f0ff;
+    stroke: #aaa;
+    stroke-dasharray: 5, 5;
+    stroke-width: 1px;
+}
+.group-label {
+    font-size: 3em;
+    color: #333;
+    font-weight: bold;
+}
+
+.highlighted label{
+    color: var(--pico-mark-color);
+    background-color: var(--pico-mark-background-color);
+    border-radius: var(--pico-border-radius);
+    padding: 0.125em 0.25em;
+}
+
+.highlighted-node {
+    stroke: var(--pico-mark-background-color);
+    stroke-width: 2rem;
+    stroke-opacity: 1;
+}
+
+
+.highlighted .criteria-input {
+    border: solid var(--pico-mark-background-color); 
+}
+
+
+
+
+
+
+
+
+
+
+
+#tab_view {
+    height: 50vh;
+}
+.card_additional{
+    font-size: smaller;
+}
+.guideline_card_container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.checkbox-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1em;
+}
+
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.btn-container {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    gap: 1em;
+}
+
+.btn-container:has(button:nth-child(3)){
+    flex-direction: column;
+    width: 100%;
+}
+
+.btn-container > button {
+    flex: 1;
+    width: 100%;
+}
+
+.network-vega-lite-container{
+    overflow: hidden;
+}
+
+.card_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+[data-theme="dark"] .label {
+    color: #333
+}
+
+[data-theme="dark"]  .group-label {
+    color: ghostwhite;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .label {
+    color: #333;
+  }
+
+  :root:not([data-theme="light"]) .group-label {
+    color: ghostwhite;
+  }
+}
+
+
+@media screen and (min-width: 992px) and (min-height: 720px) {
+
+    :root {
+        --pico-font-size: 100% !important;
+    }
+    html, body {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .grid-container {
+        flex-grow: 1;
+        display: grid;
+        grid-template-columns: minmax(19em, 23em) 2fr;
+        grid-template-rows: minmax(12.7em, 16em) 2fr;
+        grid-template-areas: 
+            "areaA areaB"
+            "areaA areaC";
+    }
+
+    #criteria_view {
+        grid-area: areaA;
+    }
+
+    #prediction_view {
+        grid-area: areaB;
+    }
+
+    #tab_view {
+        grid-area: areaC;
+        height: auto;
+        overflow-y: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #tab_guideline{
+        flex: 1;
+        overflow-y: scroll;
+    }
+
+    .tabs_body {
+        overflow-y: hidden;
+    }
+
+
+    #criteria_list_container {
+        flex-grow: 1;
+        max-height: none;
+    }
+    .scollup-btn {
+        display: none;
+    }
+}
+
+
+
+@media screen and (min-width: 2000px) and (min-height: 720px) {
+
+    :root {
+        --pico-font-size: 100% !important;
+    }
+    html, body {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .grid-container {
+        flex-grow: 1;
+        display: grid;
+        grid-template-columns: minmax(19em, 23em) 12em 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+            "areaA areaB areaC";
+        height: 100%;
+    }
+
+    #criteria_view {
+        grid-area: areaA;
+    }
+
+    #prediction_view {
+        align-items: center;
+        grid-area: areaB;
+        flex-direction: column;
+        max-height: none;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    #tab_view {
+        grid-area: areaC;
+        height: auto;
+        overflow-y: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #tab_guideline{
+        flex: 1;
+        overflow-y: scroll;
+    }
+
+    .tabs_body {
+        overflow-y: hidden;
+    }
+
+
+    #criteria_list_container {
+        flex-grow: 1;
+        max-height: none;
+    }
+    .scollup-btn {
+        display: none;
+    }
+}

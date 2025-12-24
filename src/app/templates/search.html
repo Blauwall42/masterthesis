@@ -1,0 +1,65 @@
+
+
+<!-- <div id="search_container" class="container"> -->
+    <input type="search" id="search_input" placeholder="Kriterium-Suche">
+
+    <!-- <form id="search_popup" class="hidden">
+        {% for group in criteria%}
+        <fieldset class="card">
+            <h6>{{ group.group_name }}</h6>
+            {% for feature in group.features %}
+                <div class="criteria-item" id="{{ group.group_name }}_{{ feature.name }}">
+                    <label class="criteria_label" for="input_{{ group.group_name }}_{{ feature.name }}">{{ feature.name }}</label>
+                    <div class="criteria">
+                        {% if feature.type == 'select' %}
+                            <select class="criteria_input" id="input_{{ group.group_name }}_{{ feature.name }}">
+                                <option>Bitte auswählen</option>
+                                <hr>
+                                {% for option in feature.options %}
+                                    <option>{{ option }}</option>
+                                {% endfor %}
+                            </select>
+                        {% else %}
+                            <input class="criteria_input" type="{{ feature.type }}" id="input_{{ group.group_name }}_{{ feature.name }}" step="any">
+                        {% endif %}
+                        <button id="add-btn_{{ group.group_name }}_{{ feature.name }}" type="button" class="criteria_button" onclick="add_criteria(this)">+</button>
+                    </div>
+                </div>
+            {% endfor %}
+        </fieldset>
+        {% endfor %}
+    </form>
+
+</div> -->
+
+
+<template id="template-search-list">
+<div id="_criteria_list" class="criteria_list hidden">
+    <form>
+        {% for group in criteria%}
+        <fieldset>
+            <legend>{{ group.group_name }}</legend>
+            {% for feature in group.features %}
+                <div class="criteria-item" id="_{{ group.group_name }}_{{ feature.name }}">
+                    <label class="criteria_label" for="_input_{{ group.group_name }}_{{ feature.name }}">{{ feature.name }}</label>
+                    <div class="criteria">
+                        {% if feature.type == 'select' %}
+                            <select class="criteria_input" id="_input_{{ group.group_name }}_{{ feature.name }}">
+                                <option>Bitte auswählen</option>
+                                <hr>
+                                {% for option in feature.options %}
+                                    <option>{{ option }}</option>
+                                {% endfor %}
+                            </select>
+                        {% else %}
+                            <input class="criteria_input" type="{{ feature.type }}" id="_input_{{ group.group_name }}_{{ feature.name }}" step="any">
+                        {% endif %}
+                        <button id="_add-btn_{{ group.group_name }}_{{ feature.name }}" type="button" class="criteria_button" onclick="add_criteria(this)">+</button>
+                    </div>
+                </div>
+            {% endfor %}
+        </fieldset>
+        {% endfor %}
+    </form>
+</div>
+</template>

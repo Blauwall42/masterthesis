@@ -1,0 +1,149 @@
+file_name: 'data/1 processed/DELCODE/impute/delcode_train.csv'
+
+save_model_path: 'data/3 models/DELCODE_impute.pkl'
+save_plot_path: 'data/1 processed/DELCODE/impute/DELCODE.svg'
+
+drop_nan: true
+
+edges:
+  file_name: 'data/1 processed/DELCODE/impute/DELCODE_edges.csv'
+  create_file: false
+
+rename_nodes: true
+  
+diagnosis_nodes:
+  prmdiag: Diagnose
+
+data_nodes:
+  # General
+  AGE_bin: Alter
+  bmi_bin: BMI
+  sex: Geschlecht
+  hearing: Gehör
+  vision_bin: Sehvermögen
+  visus_bin: Visus
+  living: Haushalt
+  maristat: Familienstand
+  graduat: Schulabschluss
+
+
+  #Risks
+  Rauchen: Rauchen
+  Raucherjahre_bin: Raucherjahre
+  Pack_Years_bin: Pack Years
+  Zigaretten_pro_Tag_bin: Zigaretten pro Tag
+  alcconsm: Alkoholkonsum
+  alcabuse: Alkoholmissbrauch
+
+
+  # Neuropsychology
+  AD11SUM_bin: ADAS11
+  AD13SUM_bin: ADAS13
+  mmstot_bin: MMSE
+  tmta_bin: TMT A
+  tmtb_bin: TMT B
+  tmtba_bin: TMT B/A
+  fcsfree_bin: FCSRT - Free Recall
+  fcscued_bin: FCSRT - Cued Recall
+  fcstot_bin: FCSRT - Total Recall
+  mwttot_bin: MWT-B
+
+  wmslm1b_bin: WMS-4 LM I
+  wmslm2b_bin: WMS-4 LM II
+  wmsdsf_bin: WMS-R - Vorwärts
+  wmsdsb_bin: WMS-R - Rückwärts
+  wmstot_bin: WMS-R - Gesamt
+
+  clockdw_bin: Uhren zeichen
+  clockcpy_bin: Uhren abzeichnen
+
+  sdmtot_bin: SDMT - gegebene Antworten
+  sdmctot_bin: SDMT - richtige Antworten
+  sdmtpct_bin: SDMT - Verhältnis korrekt/bearbeitet
+  sdmir01_bin: SDMT - Erinnerte Symbole
+  sdmir02_bin: SDMT - Symbol-Zahlen-Paare
+
+  cercp_bin: Figuren abzeichnen
+  vfatot_bin: Verbale Flüssigkeit
+
+
+  # Genetics
+  APOE2_bin: ApoE2
+  APOE3_bin: ApoE3
+  APOE4_bin: ApoE4
+
+
+  # Liquor  
+  Abeta38_bin: Beta-Amyloid 38
+  Abeta40_bin: Beta-Amyloid 40
+  Abeta42_bin: Beta-Amyloid 42
+  totaltau_bin: Gesamt-Tau
+  phosphotau181_bin: Phospho-Tau-181
+  ratio_Abeta42_40_bin: Ratio Beta-Amyloid 42/40
+  ratio_Abeta42_phosphotau181_bin: Ratio Beta-Amyloid 42/P-tau181
+
+
+  # imaging
+  Accumbens-area_bin: Nucleus accumbens
+  Accumbens-area_ICV_bin: Ratio Nucleus accumbens-ICV
+
+  Amygdala_bin: Amygdala
+  Amygdala_ICV_bin: Ratio Amygdala-ICV
+
+  Brain-Stem_bin: Hirnstamm
+  Brain-Stem_ICV_bin: Ratio Hirnstamm-ICV
+
+
+  Caudate_bin: Caudate
+  Caudate_ICV_bin: Ratio Caudate-ICV
+
+  CC_total_bin: Corpus callosum
+  CC_total_ICV_bin: Ratio Corpus callosum-ICV
+
+  Cerebellum_bin: Cerebellum
+  Cerebellum_ICV_bin: Ratio Cerebellum-ICV
+
+  CortexVol_bin: Cortex
+  CortexVol_ICV_bin: Ratio Cortex-ICV
+
+  CerebralWhiteMatterVol_bin: Cerebrum - W. Substanz
+  CerebralWhiteMatterVol_ICV_bin: Ratio Cerebrum - W. Substanz-ICV
+
+  Entorhinal_bin: Entorhinal
+  Entorhinal_ICV_bin: Ratio Entorhinal-ICV
+
+  Fusiform_bin: Fusiform
+  Fusiform_ICV_bin: Ratio Fusiform-ICV
+
+  Hippocampus_bin: Hippocampus
+  Hippocampus_ICV_bin: Ratio Hippocampus-ICV
+
+  EstimatedTotalIntraCranialVol_bin: ICV
+  
+  Lateral-Ventricles_bin: Laterale Ventrikel
+  Lateral-Ventricles_ICV_bin: Ratio Laterale Ventrikel-ICV
+
+  Lateral-Inferior-Ventricles_bin: Lat.-inf. Ventrikel
+  Lateral-Inferior-Ventricles_ICV_bin: Ratio Lat.-inf. Ventrikel-ICV
+
+  MidTemp_bin: MidTemp
+  MidTemp_ICV_bin: Ratio MidTemp-ICV
+
+  Optic-Chiasm_bin: Chiasma opticum
+
+  Pallidum_bin: Pallidum
+  Pallidum_ICV_bin: Ratio Pallidum-ICV
+
+  Putamen_bin: Putamen
+  Putamen_ICV_bin: Ratio Putamen-ICV
+
+  Thalamus_bin: Thalamus
+  Thalamus_ICV_bin: Ratio Thalamus-ICV
+
+  Ventricles_bin: Ventrikel
+  Ventricles_ICV_bin: Ratio Ventrikel-ICV
+
+  BrainSegVolNotVent_bin: Gesamtgehirn
+  BrainSegVolNotVent_ICV_bin: Ratio Gesamtgehirn-ICV
+
+  WM-hypointensities_bin: White Matter Hypointensities

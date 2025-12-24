@@ -1,0 +1,17 @@
+{
+	"name": "Data Processing Container",
+	"build": {
+    	"dockerfile": "Dockerfile"
+  	},
+	"postCreateCommand": "pip3 install --user -r .devcontainer/data-processing-container/requirements.txt",
+
+	"customizations": {
+		"vscode": {
+			"extensions": ["ms-python.python", "streetsidesoftware.code-spell-checker", "njpwerner.autodocstring", "ReprEng.csv", "ms-python.mypy"],
+			"settings": {
+				"cSpell.enabled": true,
+				"cSpell.language": "en,de"
+			}
+		}
+	}
+}

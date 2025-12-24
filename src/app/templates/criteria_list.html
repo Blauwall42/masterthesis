@@ -1,0 +1,56 @@
+<div class="what_if_case_settings">
+    <select id="input_case_selection" class="">
+       
+    </select>
+    <div class="what_if_case_settings_btn_container">
+        <button id="add_case_btn" class="smaller-icon-btn" onclick="interaction.add_case()"><span class="material-icons">add</span></button>
+        <button id="remove_case_btn" class="smaller-icon-btn" onclick="interaction.remove_case()" disabled><span class="material-icons">remove</span></button>    
+        <button id="undo_btn" class="smaller-icon-btn" onclick="interaction.undo()" disabled><span class="material-icons">undo</span></button>
+        <button id="redo_btn" class="smaller-icon-btn" onclick="interaction.redo()" disabled><span class="material-icons">redo</span></button>
+        <label for="hide_empty_criteria_switch">
+            <input type="checkbox" id="hide_empty_criteria_switch" name="hide_empty_criteria_switch" role="switch" onclick="">
+            Leere Kriterien verstecken
+        </label>
+    </div>
+    
+    <button id="infer_btn" class="" onclick="interaction.inference()">Vorhersage</button>
+    <input type="search" id="search_input" placeholder="Kriterium-Suche">
+</div>
+
+
+<div id="criteria_list_container">
+</div>
+
+
+<template id="template-criteria-list">
+    <div id="_criteria_list" class="criteria-list hidden">
+        {% for group in criteria%}
+            <details class="card criteria-group">
+                <summary>{{ group.group_name }}</summary>
+                {% for feature in group.features %}
+                    <div class="criteria-item empty" id="_{{ group.group_name | clean_id }}_{{ feature.name | clean_id }}">
+                        <label class="criteria-label" for="_input_{{ group.group_name | clean_id }}_{{ feature.name | clean_id }}" onclick="interaction.highlight_node('{{ feature.name | clean_id }}')">{{ feature.name }}</label>
+                        {% if feature.type == 'select' %}
+                            <select class="criteria-input" id="_input_{{ group.group_name | clean_id }}_{{ feature.name | clean_id }}" data-node="{{feature.name}}" onfocus="get_current_criteria_node(this)" oninput="changing_input(this)">
+                                <option>Bitte auswählen</option>
+                                <hr>
+                                {% for option in feature.options %}
+                                    <option>{{ option }}</option>
+                                {% endfor %}
+                            </select>
+                        {% else %}
+                            <input class="criteria-input" type="{{ feature.type }}" id="_input_{{ group.group_name  | clean_id }}_{{ feature.name  | clean_id }}" data-node="{{feature.name}}" onfocus="get_current_criteria_node(this)" oninput="changing_input(this)">
+                        {% endif %}
+                        <button id="_add-btn_{{ group.group_name | clean_id }}_{{ feature.name | clean_id }}" type="button" class="smaller-icon-btn add-btn criteria-btn" onclick="add_criteria(this)">
+                            <span class="material-icons">add</span>
+                        </button>
+                        <button id="_remove-btn_{{ group.group_name | clean_id }}_{{ feature.name | clean_id }}" type="button" class="smaller-icon-btn remove-btn" onclick="remove_criteria(this)">
+                            <span class="material-icons">remove</span>
+                        </button>
+                    </div>
+                {% endfor %}
+            </details>
+        {% endfor %}
+    </div>
+</template>
+

@@ -1,0 +1,28 @@
+{
+	"name": "Web-App Container",
+
+	"build": {
+    	"dockerfile": "Dockerfile"
+  	},
+
+	"postStartCommand": "flask --app 40_Realisation/web_app/app run --host=0.0.0.0 --port=5001 --debug",
+	"runArgs": [
+		"-p", "0.0.0.0:5001:5001"
+	],
+
+	"customizations": {
+		"vscode": {
+			"extensions": ["ms-python.python", "streetsidesoftware.code-spell-checker", "njpwerner.autodocstring"]
+		},
+		"settings": {
+			"cSpell.enabled": true,
+			"cSpell.enableFiletypes": [
+				"python",
+				"markdown",
+				"json",
+				"plaintext"
+			],
+			"cSpell.language": "en,de"
+		}
+	}
+}

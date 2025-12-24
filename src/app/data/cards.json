@@ -1,0 +1,1491 @@
+{   
+    "start_group": "Demenz",
+    "groups": {
+        "Demenz": {
+            "title": "Leitlinienüberprüfung",
+            "guideline": {"version": "5.2", "page": "56ff"},
+            "start_card": "start_Demenz",
+            "cards": {
+                "start_Demenz": {
+                    "text": "Dies ist der interaktive Leitlinienchecker für Demenz. Die Leitlinie empfiehlt neben der Bestimmung des Schweregrads einer Demenz auch eine ätiologische Zuordnung durchzuführen.",
+                    "question": "Wählen Sie hier aus, was Sie betrachten wollen:",
+                    "options": {"type": "button", "values": [
+                        {"text": "Schweregrad", "action": {"type": "group", "id": "SGRAD"}},
+                        {"text": "Ätiologische Zuordnung", "action": {"type": "group", "id": "ÄTIO"}},
+                        {"text": "Diagnostische Maßnahmen", "action": {"type": "group", "id": "DIAG"}}
+                    ]}
+                }
+            }
+        },
+        "SGRAD": {
+            "title": "Leitlinienüberprüfung für die Bestimmung des Schweregrads",
+            "guideline": {"version": "5.2", "page": "73"},
+            "start_card": "start_SGRAD",
+            "cards": {
+                "start_SGRAD": {
+                    "text": "Dies ist der interaktive Leitlinienchecker für die leichte kognitiven Störung (MCI)",
+                    "options": {"type": "button", "values": [
+                        {"text": "Start", "action": {"type": "card", "id": "SGRAD01"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "k_D": {
+                    "text": "Laut Leitlinie liegt keine gemischte Demenz vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_SGRAD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "MCI": {
+                    "text": "Laut Leitlinie liegt eine leichte kognitive Störung (MCI) vor. Es wird nun emfohlen eine ätiologische Zuordnung durchzuführen.",
+
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_SGRAD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "card", "id": "Demenz"}}
+                    ]}
+                },
+                "D": {
+                    "text": "Laut Leitlinie liegt eine stärkere kognitive Störung vor. Es wird nun emfohlen eine ätiologische Zuordnung durchzuführen.",
+
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_SGRAD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "card", "id": "Demenz"}}
+                    ]}
+                },
+                "SGRAD01": {
+                    "question": "Konnte mittels neuropsychologische Diagnostik eine kognitiven Störung festgestellt werden?",
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "SGRAD02"}},
+                        {"text": "Nein", "action": {"type": "card", "id": "k_D"}}
+                    ]}
+                },
+                "SGRAD02": {
+                    "question": "Liegt eine vollständig oder weitgehend erhaltener Alltagskompetenz und vollständiger Selbstständigkeit vor?",
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "MCI"}},
+                        {"text": "Nein", "action": {"type": "card", "id": "D"}}
+                    ]}
+                }
+            }
+        },
+        "DIAG": {
+            "title": "Zusammenfassung der Leitlinie zu Diagnostischen Maßnahmen",
+            "guideline": {"version": "5.2", "page": "76ff"},
+            "start_card": "start_DIAG",
+            "cards": {
+                "start_DIAG": {
+                    "text": "Dies ist eine Vereinfachte Zusammungfassung der Empfehlung der diagnostischen Maßnahmen.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Nicht-Spezialisiertes Setting", "action": {"type": "card", "id": "N-S_S"}},
+                        {"text": "Spezialisiertes Setting", "action": {"type": "card", "id": "S_S"}},
+                        {"text": "Blutdiagnostik", "action": {"type": "card", "id": "BLUT"}},
+                        {"text": "Liquordiagnostik", "action": {"type": "card", "id": "CSF"}},
+                        {"text": "Strukturelle Bildgebung", "action": {"type": "card", "id": "S_BILD"}},
+                        {"text": "Molekulare Bildgebung", "action": {"type": "card", "id": "M_BILD"}},
+                        {"text": "EEG", "action": {"type": "card", "id": "EEG"}},
+                        {"text": "Genetische Diagnostik", "action": {"type": "card", "id": "GEN"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "N-S_S": {
+                    "subtitle": "Nicht-Spezialisiertes Setting",
+                    "list": [
+                        "Es wird empfohlen bei Verdacht auf eine kognitive Störung einen kognitiven Kurztest (z.B. MMSE oder MOCA) durchzuführen.",
+                        "Bei Verdacht auf eine MCI wird die Verwendung von MOCA empfohlen, da dieser für MCI eine höhere Sensitivität hat.",
+                        "Des Weiteren wird empfohlen Angehörige zum Funktionsniveau des Patienten zu befragen.",
+                        "Ein anlassloses Screening auf kognitive Beeinträchtigung wird nicht empfohlen."
+                    ],
+                    "options": {"type": "button", "values": [
+                        {"text": "Zurück", "action": {"type": "card", "id": "start_DIAG"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "S_S": {
+                    "subtitle": "Spezialisiertes Setting",
+                    "list": [
+                        "Es wird bei Verdacht auf eine leichte kognitive Störung oder eine leichte Demenz eine neuropsychologische Diagnostik zur Erkennung und Beschreibung des kognitiven Defizits durchzuführen, auch wenn kognitive Kurztests unauffällige Befunde erbracht haben oder differenzialdiagnostische Fragestellungen beantwortet werden sollen.",
+                        "Zur Erkennung einer Alzheimer-Krankheit im Stadium der leichten kognitiven Störung oder der leichten Demenz in der neuropsychologischen Diagnostik wird empfohlen neben der formalisierten Erfassung des prämorbiden Leistungsniveaus und der Alltagsfunktionalität (ADL) das episodische Gedächtnis zusammen mit anderen Gedächtnis-, Aufmerksamkeits- und Exekutivfunktionen sowie sprachlichen und visuell-räumlichen Fähigkeiten zu untersuchen.",
+                        "Für eine Differenzialdiagnose wird empfohlen eine neuropsychologische Diagnostik durchzuführen, die neben der formalisierten Erfassung des prämorbiden Leistungsniveaus und der Alltagsfunktionalität (ADL) eine Untersuchung des episodischen Gedächtnisses zusammen mit anderen Gedächtnis-, Aufmerksamkeits- und Exekutivfunktionen sowie der sprachlichen und visuellräumlichen Fähigkeiten umfasst. Es wird vorgeschlagen, Symptome einer Depression mittels klinischen Interviews und Fragebogen standardisiert zu erfassen."
+                    ],
+                    "options": {"type": "button", "values": [
+                        {"text": "Zurück", "action": {"type": "card", "id": "start_DIAG"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "BLUT": {
+                    "subtitle": "Blutdiagnostik",
+                    "list": [
+                        "Im Rahmen der Basisdiagnostik kognitiver Störungen wird empfohlen folgende Blutuntersuchungen durchzuführen: Blutbild, Elektrolyte (Na, K, Ca), GOT, Gamma-GT, Kreatinin, Harnstoff, CRP, TSH, Vitamin B12, eGFR.",
+                        "Des Weiteren wird im Fall spezifischer Verdachtsdiagnosen empfohlen gezielte weitergehende Laboruntersuchungen durchzuführen.",
+                        "Es wird nicht empfohlen die Diagnostik von zerebraler Amyloidpathologie oder anderen neuropathologischen Aspekten neurodegenerativer Erkrankungen alleine auf blutbasierte, zugelassene Biomarker zu gründen."
+                    ],
+                    "options": {"type": "button", "values": [
+                        {"text": "Zurück", "action": {"type": "card", "id": "start_DIAG"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "CSF": {
+                    "subtitle": "Liquordiagnostik",
+                    "list": [
+                        "Es wird empfohlen eine Liquordiagnostik zum Ausschluss einer entzündlichen Gehirnerkrankung durchzuführen, wenn sich dafür Hinweise aus der Anamnese, dem körperlichen Befund oder der Zusatzdiagnostik ergeben.",
+                        "Es wird empfohlen die Parameter des Liquorgrundprofils zu bestimmen, wenn eine Liquordiagnostik bei Demenz durchgeführt wird",
+                        "Eine Liquordiagnostik mit Bestimmung der Biomarker Aβ42, Gesamt-Tau und pTau wird in Fällen einer Demenz oder leichten kognitiven Störung mit unklarer Ursache nach klinischer und neuropsychologischer Untersuchung und nach Ausschluss potenziell reversibler Ursachen zur ätiologischen Differenzialdiagnostik primärer Demenz-Erkrankungen (insbesondere bei Alzheimer-Krankheit, frontotemporaler Demenz, vaskulärer kognitiver Störung/Demenz) empfohlen, wenn das Ergebnis einen zu erwartenden Effekt auf das klinische Management hat.",
+                        "Das Ratio Aβ42/40 im Liquor zur Feststellung einer Amyloid-Pathologie ist gegenüber der Messung von Aβ42 allein zu bevorzugen.",
+                        "Es wird empfohlen das Ratio Aβ42/pTau oder Aβ42/Gesamt-Tau im Liquor zur Feststellung einer Alzheimer-Pathologie bevorzugt gegenüber der Messung der einzelnen Marker einzusetzen.",
+                        "Menschen mit leichter kognitiver Störung, die nach Aufklärung eine Schätzung ihres individuellen Demenzrisikos haben möchten, kann eine Liquordiagnostik mit Bestimmung der Biomarker für die Alzheimer-Krankheit mit Ergebnisinterpretation durch einen Experten und Aufklärung über die Unsicherheit der Schätzung sowie mögliche psychische Belastung als Folge des Ergebnisses angeboten werden."
+                    ],
+                    "options": {"type": "button", "values": [
+                        {"text": "Zurück", "action": {"type": "card", "id": "start_DIAG"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "S_BILD": {
+                    "subtitle": "Strukturelle Bildgebung",
+                    "list": [
+                        "Es wird empfohlen im Rahmen der Erstdiagnostik, u. a. zum Ausschluss potenziell reversibler Ursachen einer Demenz, eine strukturelle Bildgebung des Gehirns durchzuführen.",
+                        "Eine MRT ist im Vergleich zu einer CT für die strukturelle Bildgebung im Rahmen der ätiologischen Demenzdiagnostik zu bevorzugen.",
+                        "Es wird empfohlen eine strukturelle MRT, insbesondere zur Beurteilung regionaler Atrophie, inklusive des medialen Temporallappens, und des Ausmaßes vaskulärer Läsionen in der ätiologischen Differenzialdiagnose von primären Demenzerkrankungen einzusetzen",
+                        "Es wird zur Beschreibung der Atrophie des medialen Temporallappens empfohlen die visuelle Beurteilungsskala nach Scheltens anzuwenden und den Grad der Atrophie entsprechend der Skala in dem MRT-Befundbericht zu beschreiben.",
+                        "Eine regelhafte Durchführung einer strukturellen Bildgebung im Verlauf bei Demenz wird nicht empfohlen.",
+                        "Es wird empfohlen das Volumen des Hippocampus bei der Schätzung des Risikos für eine zukünftige Demenz bei Personen mit leichter kognitiver Störung als ergänzendes, aber nicht als einziges Maß zu berücksichtigen, um eine Demenz im Einzelfall vorherzusagen.",
+                        "Es wird nicht empfohlen, automatisierte Analyseverfahren für die strukturelle MRT als einzige Methode ohne radiologisch-visuelle Befundung im Rahmen der Demenzdiagnostik einzusetzen."
+                    ],
+                    "options": {"type": "button", "values": [
+                        {"text": "Zurück", "action": {"type": "card", "id": "start_DIAG"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "M_BILD": {
+                    "subtitle": "Molekulare Bildgebung",
+                    "list": [
+                        "Es wird empfohlen, wenn die Ursache einer Demenz oder leichten kognitiven Störung nach Ausschluss reversibler Ursachen und nach klinischer und neuropsychologischer Untersuchung und ggf. Liquorbiomarkern unklar ist und durch die Differenzialdiagnostik ein Effekt auf das klinische Management zu erwarten ist, eine FDG-PET-Untersuchung durchzuführen.",
+                        "Eine automatisierte FDG-PET-Analysen zusätzlich zu visuellen Analysen anzuwenden wird empfohlen.",
+                        "Ein Perfusions-SPECT (HMPAO-SPECT) kann bei fehlender Verfügbarkeit einer FDG-PET als Alternative eingesetzt werden und zusätzlich automatisierte Analyseverfahren anzuwenden.",
+                        "Es wird empfohlen, wenn bei Menschen mit einer gesichert diagnostizierten leichten kognitiven Störung ein Anlass besteht, über den Stellenwert einer FDG-PET-Untersuchung zur Schätzung des individuellen Demenzrisikos zu informieren, die Person ergebnisoffen über die Vor- und Nachteile und mögliche Konsequenzen zu beraten, bevor eine FDG-PET-Untersuchung in Betracht gezogen wird. Nach der Aufklärung wird empfohlen ein FDG-PET anzubieten.",
+                        "Es wird empfohlen, wenn die Ursache einer Demenz oder leichten kognitiven Störung nach Ausschluss reversibler Ursachen und nach klinischer und neuropsychologischer Untersuchung und ggf. Liquorbiomarkern unklar ist und durch die Differenzialdiagnostik ein Effekt auf das klinische Management zu erwarten ist, zur Erkennung oder zum Ausschluss einer Alzheimer-Pathologie eine Amyloid-PET-Untersuchung durchzuführen.",
+                        "Es wird empfohlen, wenn bei Menschen mit einer gesichert diagnostizierten leichten kognitiven Störung ein Anlass besteht, über den Stellenwert einer Amyloid-PET-Untersuchung zur Schätzung des individuellen Demenzrisikos zu informieren, die Patient:innen ergebnisoffen über die Vor- und Nachteile und mögliche Konsequenzen zu beraten, bevor eine Amyloid-PETUntersuchung in Betracht gezogen wird. Wir schlagen vor, nach der Aufklärung eine Amyloid-PET anzubieten.",
+                        "Es wird empfohlen, wenn die Ursache einer Demenz nach Ausschluss reversibler Ursachen und nach klinischer und neuropsychologischer Untersuchung und ggf. Amyloid-Diagnostik unklar ist und durch die Differenzialdiagnostik ein Effekt auf das klinische Management zu erwarten ist, zur Erkennung oder zum Ausschluss einer fortgeschrittenen Alzheimer-typischen TauPathologie eine Tau-PET-Untersuchung durchzuführen.",
+                        "Bei Verdacht auf eine Demenz mit Lewy-Körpern wird, wenn das Ergebnis einen zu erwartenden Effekt auf das klinische Management hat, eine DaT-SPECT-Untersuchung oder eine MIBG-Szintigraphie (Off-Label-Einsatz) empfohlen."
+                    ],
+                    "options": {"type": "button", "values": [
+                        {"text": "Zurück", "action": {"type": "card", "id": "start_DIAG"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "EEG": {
+                    "subtitle": "EEG",
+                    "list": [
+                        "Die Durchführung eines quantitativen EEG in der Regelversorgung, um Menschen mit Alzheimer-Demenz von Menschen mit Demenz mit Lewy-Körpern differenzialdiagnostisch abzugrenzen, wird nicht empfohlen.",
+                        "Ein EEG zur Identifikation eines erhöhten Epilepsierisikos bei Menschen mit Demenz oder leichter kognitiver Beeinträchtigung nicht einzusetzen wird empfohlen."
+                    ],
+                    "options": {"type": "button", "values": [
+                        {"text": "Zurück", "action": {"type": "card", "id": "start_DIAG"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "GEN": {
+                    "subtitle": "Genetische Diagnostik",
+                    "list": [
+                        "Die Bestimmung des Apolipoprotein-E-Genotyps für die Diagnostik oder Differenzialdiagnostik oder für prognostische Fragestellung bei Demenz, wird nicht empfohlen.",
+                        "Es wird bei Verdacht auf eine monogen verursachte Demenz, z. B. bei frühem Erkrankungsbeginn oder einer positiven Familienanamnese, empfohlen eine qualifizierte genetische Beratung und genetische Testung zur Ursachenklärung anzubieten."
+                    ],
+                    "options": {"type": "button", "values": [
+                        {"text": "Zurück", "action": {"type": "card", "id": "start_DIAG"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                }
+            }
+        },
+        "ÄTIO": {
+            "title": "Leitlinienüberprüfung",
+            "guideline": {"version": "5.2", "page": "56ff"},
+            "start_card": "start_Demenz",
+            "cards": {
+                "start_Demenz": {
+                    "text": "Dies ist der interaktive Leitlinienchecker für Demenz. Die Empfehlung der Leitlinie ist es neben einer Demenzdiagnose eine ätiologische Zuordnung durchzuführen. Wählen Sie hier aus, welche Demenzvariante Sie betrachten wollen:",
+                    "options": {"type": "button", "values": [
+                        {"text": "AD", "action": {"type": "group", "id": "AD"}},
+                        {"text": "Vaskuläre Demenz", "action": {"type": "group", "id": "VaD"}},
+                        {"text": "bvFTD", "action": {"type": "group", "id": "bvFTD"}},
+                        {"text": "Gemischte Demenz", "action": {"type": "group", "id": "GM"}},
+                        {"text": "PPA", "action": {"type": "group", "id": "PPA"}},
+                        {"text": "DLK", "action": {"type": "group", "id": "DLK"}},
+                        {"text": "Demenz bei Parkinson-Krankheit", "action": {"type": "group", "id": "PD"}},
+                        {"text": "LATE", "action": {"type": "group", "id": "LATE"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                }
+            }
+        },
+        "AD": {
+            "title": "Leitlinienüberprüfung für die Demenz der Alzheimer-Krankheit (AD)",
+            "guideline": {"version": "5.2", "page": "59f"},
+            "start_card": "start_AD",
+            "cards": {
+                "start_AD": {
+                    "text": "Dies ist der interaktive Leitlinienchecker für die Diagnose Demenz der Alzheimer-Krankheit.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Start", "action": {"type": "card", "id": "AD01"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "k_AD": {
+                    "text": "Laut Leitlinie liegt keine Demenz der Alzheimer-Krankheit vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_AD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "AD00": {
+                    "text": "Laut Leitlinie liegt eine Demenz der Alzheimer-Krankheit vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_AD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },        
+                "AD01": {
+                    "question": "Welcher klinischer Phänotyp liegt vor?",
+                    "options": {"type": "button", "values": [
+                        {"text": "Amnestische Variante", "action": {"type": "card", "id": "AD02"}},
+                        {"text": "Posteriore kortikale Atrophie", "action": {"type": "card", "id": "AD02"}},
+                        {"text": "PPA", "action": {"type": "card", "id": "AD02"}},
+                        {"text": "Behavioral-dysexekutive Variante", "action": {"type": "card", "id": "AD02"}},
+                        {"text": "Kortikobasales Syndrom", "action": {"type": "card", "id": "AD02"}},
+                        {"text": "Es liegt kein spezifischer Phänotyp vor", "action": {"type": "card", "id": "k_AD"}},
+                        {"text": "PPA überprüfen", "action": {"type": "group", "id": "PPA"}}
+                    ]}
+                },
+                "AD02": {
+                    "question": "Welche Biomarker liegt vor?",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Amyloid-positiv", "value": 1},
+                        {"text": "Tau-positiv", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 2, "return": {"type": "card", "id": "k_AD"}},
+                        {"operation": "equal", "value": 2, "return": {"type": "card", "id": "AD00"}}
+                    ]
+                }
+            }
+        },
+        "VaD": {
+            "title": "Leitlineüberprüfung für die vaskuläre Demenz",
+            "guideline": {"version": "5.2", "page": "61f"},
+            "start_card": "start_VaD",
+            "cards": {
+                "start_VaD": {
+                    "text": "Dies ist der interaktive Leitlinienchecker für die Diagnose der vaskulären Demenz.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Start", "action": {"type": "card", "id": "VaD01"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}  
+                    ]}
+                },
+                "k_VaD": {
+                    "text": "Laut Leitlinie liegt keine vaskuläre Demenz vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_VaD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "VaD_PSD": {
+                    "text": "Laut Leitlinie liegt eine Demenz nach Schlaganfall vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_VaD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "VaD_SIVaD": {
+                    "text": "Laut Leitlinie liegt eine subkortikale ischämische vaskuläre Demenz vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_VaD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "VaD_MID": {
+                    "text": "Laut Leitlinie liegt eine Multi-Infarkt-Demenz vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_VaD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "VaD01": {
+                    "question": "Sind nach einem Schlaganfall innerhalb von 6 Monaten eine kognitive Verschlechterung aufgetreten und die sich nicht zurückbildet?",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "VaD_PSD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "card", "id": "VaD02"}}
+                    ]}
+                },
+                "VaD02": {
+                    "question": "Liegt eine Erkrankung bei einer Demenzsymptomatik eine Erkankung der kleinen Gefäße vor?",
+                    "additional": "Lakunäre Infarkte und ischämische Läsionen der weißen Substanz stellen häufigsten Hirnläsionen dar",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "VaD_SIVaD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "card", "id": "VaD02"}}
+                    ]}
+                },
+                "VaD03": {
+                    "question": "Haben multiple große kortikale Infarkte eine Beteiligung und den wahrscheinlichsten Beitrag bei einer Demenz?",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "VaD_MID"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "card", "id": "VaD02"}}
+                    ]}
+                }
+
+            }
+        },
+        "GM": {
+            "title": "Leitlinienüberprüfung für die gemischte Demenz",
+            "guideline": {"version": "5.2", "page": "62"},
+            "start_card": "start_GM",
+            "cards": {
+                "start_GM": {
+                    "text": "Dies ist der interaktive Leitlinienchecker für die gemischte Demenz",
+                    "options": {"type": "button", "values": [
+                        {"text": "Start", "action": {"type": "card", "id": "GM01"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "k_GM": {
+                    "text": "Laut Leitlinie liegt keine gemischte Demenz vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_GM"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "GM00": {
+                    "text": "Laut Leitlinie liegt eine gemischte Demenz vor.\nEs wird empfohlen, spezifische gemischte Pathologien zu benennen (z. B. „VCI-AD“) und nicht die weniger spezifische Klassifikation „gemischte Demenz“ zu verwenden, sofern möglich.",
+                    "additional": "VCI (vascular cognitive impairment)",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_GM"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "GM01": {
+                    "question": "Liegen zwei verschiedene Demenzformen vor?",
+                    "additional": "Bspw. eine Vaskuläre Demenz und eine Demenz mit Lewy-Körpern",
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "GM00"}},
+                        {"text": "Nein", "action": {"type": "card", "id": "k_GM"}}
+                    ]}
+                }
+            }
+        },
+        "bvFTD": {
+            "title": "Leitlineüberprüfung für die Verhaltensvariante der frontotemporalen Demenz (bvFTD)",
+            "guideline": {"version": "5.2", "page": "63f"},
+            "start_card": "start_bvFTD",
+            "cards": {
+                "start_bvFTD": {
+                    "text": "Dies ist der interaktive Leitlinienchecker für die Diagnose der behaviorale Variante der frontotemporalen Demenz (bvFTD).",
+                    "options": {"type": "button", "values": [
+                        {"text": "Starten", "action": {"type": "card", "id": "bvFTD01"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "k_bvFTD": {
+                    "text": "Laut Leitlinie liegt keine bvFTD vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_bvFTD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "m_bvFTD": {
+                    "text": "Laut Leitlinie liegt eine mögliche bvFTD vor.",
+                    "question": "Möchten Sie prüfen, ob Lautlinie eine wahrscheinliche oder pathologisch gesicherte bvFTD vorliegt?",
+                    "options": {"type": "button", "values": [
+                        {"text": "Wahrscheinliche bvFTD prüfen", "action": {"type": "card", "id": "bvFTD09a"}},
+                        {"text": "Pathologisch gesichert bvFTD prüfen", "action": {"type": "card", "id": "bvFTD13b"}}
+                    ]}
+                },
+                "kp_m_bvFTD": {
+                    "text": "Laut Leitlinie liegt eine mögliche, aber keine pathologisch gesicherte bvFTD vor.",
+                    "question": "Möchten Sie prüfen, ob Lautlinie eine wahrscheinliche oder pathologisch gesicherte bvFTD vorliegt?",
+                    "options": {"type": "button", "values": [
+                        {"text": "Wahrscheinliche bvFTD prüfen", "action": {"type": "card", "id": "bvFTD09b"}}
+                    ]}
+                },
+                "kp_kw_bvFTD": {
+                    "text": "Laut Leitlinie liegt eine mögliche, aber keine wahrscheinliche oder pathologisch gesicherte bvFTD vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_bvFTD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kw_bvFTD": {
+                    "text": "Laut Leitlinie liegt keine wahrscheinliche sondern nur eine mögliche bvFTD vor.",
+                    "question": "Möchten Sie prüfen, ob eine pathologisch gesicherte bvFTD vorliegt?",
+                    "options": {"type": "button", "values": [
+                        {"text": "Pathologisch gesichert bvFTD prüfen", "action": {"type": "card", "id": "bvFTD13a"}}
+                    ]}
+                },
+                "w_bvFTD": {
+                    "text": "Laut Leitlinie liegt eine wahrscheinliche bvFTD vor.",
+                    "question": "Möchten Sie prüfen, ob pathologisch gesicherte bvFTD vorliegt?",
+                    "options": {"type": "button", "values": [
+                        {"text": "Pathologisch gesichert bvFTD prüfen", "action": {"type": "card", "id": "bvFTD14"}}
+                    ]}
+                },
+                "kp_w_bvFTD": {
+                    "text": "Laut Leitlinie liegt eine wahrscheinliche, aber keine pathologisch gesicherte bvFTD vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_bvFTD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "p_bvFTD": {
+                    "text": "Laut Leitlinie liegt eine bvFTD mit nachgewiesener FTLD-Pathologie vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_bvFTD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "bvFTD01": {
+                    "question": "Ist eine fortschreitende Zunahme von Verhaltensänderungen und/oder von kognitiven Defiziten durch Beobachtung oder Fremdanamnese belegbar?",
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "bvFTD02"}},
+                        {"text": "Nein", "action": {"type": "card", "id": "k_bvFTD"}}
+                    ]}
+                },
+                "bvFTD02": {
+                    "options": {"type": "link", "values": ["bvFTD03", "bvFTD04", "bvFTD05", "bvFTD06", "bvFTD07", "bvFTD08"]},
+                    "results": [
+                        {"operation": "less", "value": 3, "return": {"type": "card", "id": "k_bvFTD"}},
+                        {"operation": "greater", "value": 2, "return": {"type": "card", "id": "m_bvFTD"}}
+                    ]
+                },
+                "bvFTD03": {
+                    "question": "Wählen Sie alle zutreffenden Symptome aus:",
+                    "additional": "CAVE: Symptome müssen persistieren oder wiederkehren und nicht nur einmalig oder selten auftreten",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Sozial unangemessenes Verhalten", "value": 1},
+                        {"text": "Verlust von Umgangsformen oder Anstand", "value": 1},
+                        {"text": "Impulsive, unüberlegte oder leichtsinnige Handlungen", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "equal", "value": 0, "return": {"type": "value", "value": 0}},
+                        {"operation": "greater", "value": 0, "return": {"type": "value", "value": 1}}
+                    ]
+                },
+                "bvFTD04": {
+                    "question": "Wählen Sie alle zutreffenden Symptome aus:",
+                    "additional": "CAVE: Symptome müssen persistieren oder wiederkehren und nicht nur einmalig oder selten auftreten",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Apathie", "value": 1},
+                        {"text": "Passivität", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "equal", "value": 0, "return": {"type": "value", "value": 0}},
+                        {"operation": "greater", "value": 0, "return": {"type": "value", "value": 1}}
+                    ]
+                },
+                "bvFTD05": {
+                    "question": "Wählen Sie alle zutreffenden Symptome aus:",
+                    "additional": "CAVE: Symptome müssen persistieren oder wiederkehren und nicht nur einmalig oder selten auftreten",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Vermindertes Eingehen auf die Bedürfnisse und Gefühle anderer Personen", "value": 1},
+                        {"text": "Vermindertes Interesse an sozialen Kontakten und Beziehungen, Abnahme persönlicher Wärme", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "equal", "value": 0, "return": {"type": "value", "value": 0}},
+                        {"operation": "greater", "value": 0, "return": {"type": "value", "value": 1}}
+                    ]
+                },
+                "bvFTD06": {
+                    "question": "Wählen Sie alle zutreffenden Symptome aus:",
+                    "additional": "CAVE: Symptome müssen persistieren oder wiederkehren und nicht nur einmalig oder selten auftreten",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Einfache repetitive Bewegungen", "value": 1},
+                        {"text": "Komplexes, zwanghaftes oder ritualisiertes Verhalten", "value": 1},
+                        {"text": "Sprachliche Stereotypien", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "equal", "value": 0, "return": {"type": "value", "value": 0}},
+                        {"operation": "greater", "value": 0, "return": {"type": "value", "value": 1}}
+                    ]
+                },
+                "bvFTD07": {
+                    "question": "Wählen Sie alle zutreffenden Symptome aus:",
+                    "additional": "CAVE: Symptome müssen persistieren oder wiederkehren und nicht nur einmalig oder selten auftreten",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Veränderte Nahrungspräferenzen", "value": 1},
+                        {"text": "Essattacken, gesteigerter Konsum von Alkohol oder Nikotin/Zigaretten", "value": 1},
+                        {"text": "In den Mund nehmen oder Verzehren von nicht essbarem Material", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "equal", "value": 0, "return": {"type": "value", "value": 0}},
+                        {"operation": "greater", "value": 0, "return": {"type": "value", "value": 1}}
+                    ]
+                },
+                "bvFTD08": {
+                    "question": "Wählen Sie alle zutreffenden Symptome aus:",
+                    "additional": "CAVE: Symptome müssen persistieren oder wiederkehren und nicht nur einmalig oder selten auftreten",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Defizit bei Aufgaben mit exekutiver Komponente", "value": 1},
+                        {"text": "Relativ erhaltenes episodisches Gedächtnis", "value": 1},
+                        {"text": "Relativ erhaltene visuell-räumliche Leistungen", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 3, "return": {"type": "value", "value": 0}},
+                        {"operation": "equal", "value": 3, "return": {"type": "value", "value": 1}}
+                    ]
+                },
+                "bvFTD09a": {
+                    "options": {"type": "link", "values": ["bvFTD10", "bvFTD11"]},
+                    "results": [
+                        {"operation": "less", "value": 2, "return": {"type": "card", "id": "kw_bvFTD"}},
+                        {"operation": "equal", "value": 2, "return": {"type": "card", "id": "bvFTD12a"}}
+                    ]
+                },
+                "bvFTD09b": {
+                    "options": {"type": "link", "values": ["bvFTD10", "bvFTD11"]},
+                    "results": [
+                        {"operation": "less", "value": 2, "return": {"type": "card", "id": "kp_kw_bvFTD"}},
+                        {"operation": "equal", "value": 2, "return": {"type": "card", "id": "bvFTD12b"}}
+                    ]
+                },
+                "bvFTD10": {
+                    "question": "Ist ein signifikantes Fortschreiten funktioneller Defizite erkennbar?",
+                    "additional": "Durch den Bericht Angehöriger oder in klinischen Skalen wie der Clinical Dementia Rating Scale oder dem Functional Activities Questionnaire",
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "link_child", "value": "1"}},
+                        {"text": "Nein", "action": {"type": "link_child", "value": "0"}}
+                    ]}
+                },
+                "bvFTD11": {
+                    "question": "Wählen Sie alle zutreffenden Ergebnisse der bildgebenden Verfahren aus:",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Frontale und/oder anterior-temporale Atrophie im MRT oder CT", "value": 1},
+                        {"text": "Frontale und/oder anterior-temporale Hypoperfusion oder  Hypometabolismus (Durch SPECT oder PET nachgewiesen)", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "equal", "value": 0, "return": {"type": "value", "value": 0}},
+                        {"operation": "greater", "value": 0, "return": {"type": "value", "value": 1}}
+                    ]
+                },
+                "bvFTD12a": {
+                    "question": "Weisen Biomarker stark auf eine Alzheimer-Erkrankung oder andere neurodegenerative Prozesse hin?",
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "kw_bvFTD"}},
+                        {"text": "Nein", "action": {"type": "card", "id": "w_bvFTD"}}
+                    ]}
+                },
+                "bvFTD12b": {
+                    "question": "Weisen Biomarker stark auf eine Alzheimer-Erkrankung oder andere neurodegenerative Prozesse hin?",
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "kp_kw_bvFTD"}},
+                        {"text": "Nein", "action": {"type": "card", "id": "kp_w_bvFTD"}}
+                    ]}
+                },
+                "bvFTD13a": {
+                    "question": "Wählen Sie alle zutreffenden Symptome aus:",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Histopathologischer Nachweis einer FTLD in einer Biopsie oder in einer Post-mortem Untersuchung", "value": 1},
+                        {"text": "Vorliegen einer bekannten pathogenen Mutation", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "equal", "value": 0, "return": {"type": "card", "id": "kp_kw_bvFTD"}},
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "p_bvFTD"}}
+                    ]
+                    },
+                "bvFTD13b": {
+                    "question": "Wählen Sie alle zutreffenden Symptome aus:",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Histopathologischer Nachweis einer FTLD in einer Biopsie oder in einer Post-mortem Untersuchung", "value": 1},
+                        {"text": "Vorliegen einer bekannten pathogenen Mutation", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "equal", "value": 0, "return": {"type": "card", "id": "kp_m_bvFTD"}},
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "p_bvFTD"}}
+                    ]
+                },
+                "bvFTD14": {
+                    "question": "Wählen Sie alle zutreffenden Symptome aus:",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Histopathologischer Nachweis einer FTLD in einer Biopsie oder in einer Post-mortemUntersuchung", "value": 1},
+                        {"text": "Vorliegen einer bekannten pathogenen Mutation", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "equal", "value": 0, "return": {"type": "card", "id": "kp_w_bvFTD"}},
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "p_bvFTD"}}
+                    ]
+                }
+            }
+        },
+        "PPA": {
+            "title": "Leitlinienüberprüfung für die Primär progrediente Aphasien (PPA)",
+            "guideline": {"version": "5.2", "page": "64ff"},
+            "start_card": "start_PPA",
+            "cards": {
+                "start_PPA": {
+                    "text": "Dies ist der interaktive Leitlinienchecker für die gemischte Demenz",
+                    "options": {"type": "button", "values": [
+                        {"text": "Start", "action": {"type": "card", "id": "PPA01"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "k_PPA": {
+                    "text": "Laut Leitlinie liegt keine PPA vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_PPA"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "PPA00": {
+                    "text": "Die PPA wird in verschiedene Varianten unterteilt.",
+                    "question": "Zum Fortführen bitte eine Variante wählen:",
+                    "options": {"type": "button", "values": [
+                        {"text": "nf-avPPA", "action": {"type": "card", "id": "nfavPPA01"}},
+                        {"text": "svPPA", "action": {"type": "card", "id": "svPPA01"}},
+                        {"text": "lvPPA", "action": {"type": "card", "id": "lvPPA01"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "PPA01": {
+                    "question": "Was trifft zu?",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Initial hauptsächlich Einschränkungen des episodischen oder visuellen Gedächtnisses oder der visuell-räumlicher Leistungen.", "value": 1},
+                        {"text": "Initiale Verhaltensänderungen", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "equal", "value": 0, "return": {"type": "card", "id": "PPA02"}},
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "k_PPA"}}
+                    ]
+                },
+                "PPA02": {
+                    "question": "Was trifft zu?",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Das prominenteste klinische Merkmal sind Schwierigkeiten mit der Sprache", "value": 1},
+                        {"text": "Diese Defizite sind die Hauptursache für eine Einschränkung in den Aktivitäten des täglichen Lebens", "value": 1},
+                        {"text": "Die Aphasie sollte bei Symptomerstmanifestation und in der initialen Phase der Erkrankung das Hauptdefizit darstellen", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "equal", "value": 3, "return": {"type": "card", "id": "PPA00"}},
+                        {"operation": "less", "value": 3, "return": {"type": "card", "id": "k_PPA"}}
+                    ]
+                },
+                "k_nfavPPA": {
+                    "subtitle": "Nicht flüssigen/agrammatischen Variante der PPA (nf-avPPA)",
+                    "text": "Laut Leitlinie liegt keine nf-avPPA vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kl_nfavPPA": {
+                    "subtitle": "Nicht flüssigen/agrammatischen Variante der PPA (nf-avPPA)",
+                    "text": "Laut Leitlinie liegt eine klinische Diagnose der nf-avPPA vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Durch bildgebende Verfahren gestützte Diagnose prüfen", "action": {"type": "card", "id": "PPA04"}},
+                        {"text": "Pathologisch gesicherte Diagnose prüfen", "action": {"type": "card", "id": "PPA05"}},
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kb_kl_nfavPPA": {
+                    "subtitle": "Nicht flüssigen/agrammatischen Variante der PPA (nf-avPPA)",
+                    "text": "Laut Leitlinie liegt eine klinische Diagnose der nf-avPPA vor, die aber nicht durch die Bildgebung gesichert werden konnte.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Pathologisch gesicherte Diagnose prüfen", "action": {"type": "card", "id": "PPA06"}},
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "b_nfavPPA": {
+                    "subtitle": "Nicht flüssigen/agrammatischen Variante der PPA (nf-avPPA)",
+                    "text": "Laut Leitlinie liegt eine durch Bildgebung gesicherte Diagnose der nf-avPPA vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Pathologisch gesicherte Diagnose prüfen", "action": {"type": "card", "id": "PPA07"}},
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kp_kl_nfavPPA": {
+                    "subtitle": "Nicht flüssigen/agrammatischen Variante der PPA (nf-avPPA)",
+                    "text": "Laut Leitlinie liegt eine klinische Diagnose der nf-avPPA vor, die aber nicht pathologisch gesichert werden konnte.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Durch bildgebende Verfahren gestützte Diagnose prüfen", "action": {"type": "card", "id": "PPA08"}},
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kp_kb_kl_nfavPPA": {
+                    "subtitle": "Nicht flüssigen/agrammatischen Variante der PPA (nf-avPPA)",
+                    "text": "Laut Leitlinie liegt eine klinische Diagnose der nf-avPPA vor, die aber weder durch die Bildgebung noch pathologisch gesichert werden konnte.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kp_b_nfavPPA": {
+                    "subtitle": "Nicht flüssigen/agrammatischen Variante der PPA (nf-avPPA)",
+                    "text": "Laut Leitlinie liegt eine durch Bildgebung gesicherte Diagnose der nf-avPPA vor, die aber nicht pathologisch gesichert werden konnte.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "p_nfavPPA": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "text": "Laut Leitlinie liegt eine pathologisch gesicherte Diagnose der svPPA vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "nfavPPA01": {
+                    "subtitle": "Nicht flüssigen/agrammatischen Variante der PPA (nf-avPPA)",
+                    "options": {"type": "link", "values": ["nfavPPA02", "nfavPPA03"]},
+                    "results": [
+                        {"operation": "less", "value": 2, "return": {"type": "card", "id": "k_nfavPPA"}},
+                        {"operation": "greater", "value": 1, "return": {"type": "card", "id": "kl_nfavPPA"}}
+                    ]
+                },
+                "nfavPPA02": {
+                    "subtitle": "Nicht flüssigen/agrammatischen Variante der PPA (nf-avPPA)",
+                    "question": "Wählen Sie alle zutreffenden Symptome aus:",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Agrammatismus in der expressiven Sprache", "value": 1},
+                        {"text": "Angestrengtes stockendes Sprechen mit inkonsistenten Lautfehlern und Lautentstellungen (Sprechapraxie)", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "equal", "value": 0, "return": {"type": "value", "value": 0}},
+                        {"operation": "greater", "value": 0, "return": {"type": "value", "value": 1}}
+                    ]
+                },
+                "nfavPPA03": {
+                    "subtitle": "Nicht flüssigen/agrammatischen Variante der PPA (nf-avPPA)",
+                    "question": "Wählen Sie alle zutreffenden Symptome aus:",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "beeinträchtigtes Verständnis syntaktisch komplexer Sätze", "value": 1},
+                        {"text": "intaktes Einzelwortverständnis", "value": 1},
+                        {"text": "intaktes Objektwissen", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 2, "return": {"type": "value", "value": 0}},
+                        {"operation": "greater", "value": 1, "return": {"type": "value", "value": 1}}
+                    ]
+                },
+                "nfavPPA04": {
+                    "subtitle": "Nicht flüssigen/agrammatischen Variante der PPA (nf-avPPA)",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "vorwiegend links posteriore fronto-insuläre Atrophie im MRT erkennbar", "value": 1},
+                        {"text": "vorwiegend links posteriore fronto-insuläre und temporale Hypoperfusion oder Hypometabolismus, dargestellt durch SPECT oder PET", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "kb_kl_nfavPPA"}},
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "b_nfavPPA"}}
+                    ]
+                },
+                "nfavPPA05": {
+                    "subtitle": "Nicht flüssigen/agrammatischen Variante der PPA (nf-avPPA)",
+                    "additional": "AD (Alzheimer’s disease), FTLD (frontotemporale lobäre Degeneration), TDP (TAR-DNAbindendes Protein 43)",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Histopathologischer Nachweis einer spezifischen neurodegenerativen Pathologie (z.B. FTLD-tau, FTLD-TDP, AD oder andere)", "value": 1},
+                        {"text": "Vorliegen einer bekannten pathogenen Mutation", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "kp_kl_nfavPPA"}},
+                        {"operation": "greater", "value": 1, "return": {"type": "card", "id": "kp_kl_nfavPPA"}},
+                        {"operation": "equal", "value": 1, "return": {"type": "card", "id": "p_nfavPPA"}}
+                    ]
+                },
+                "nfavPPA06": {
+                    "subtitle": "Nicht flüssigen/agrammatischen Variante der PPA (nf-avPPA)",
+                    "additional": "AD (Alzheimer’s disease), FTLD (frontotemporale lobäre Degeneration), TDP (TAR-DNAbindendes Protein 43)",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Histopathologischer Nachweis einer spezifischen neurodegenerativen Pathologie (z.B. FTLD-tau, FTLD-TDP, AD oder andere)", "value": 1},
+                        {"text": "Vorliegen einer bekannten pathogenen Mutation", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "kp_kb_kl_nfavPPA"}},
+                        {"operation": "greater", "value": 1, "return": {"type": "card", "id": "kp_kb_kl_nfavPPA"}},
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "p_nfavPPA"}}
+                    ]
+                },
+                "nfavPPA07": {
+                    "subtitle": "Nicht flüssigen/agrammatischen Variante der PPA (nf-avPPA)",
+                    "additional": "AD (Alzheimer’s disease), FTLD (frontotemporale lobäre Degeneration), TDP (TAR-DNAbindendes Protein 43)",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Histopathologischer Nachweis einer spezifischen neurodegenerativen Pathologie (z.B. FTLD-tau, FTLD-TDP, AD oder andere)", "value": 1},
+                        {"text": "Vorliegen einer bekannten pathogenen Mutation", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "kp_b_nfavPPA"}},
+                        {"operation": "greater", "value": 1, "return": {"type": "card", "id": "kp_b_nfavPPA"}},
+                        {"operation": "equal", "value": 1, "return": {"type": "card", "id": "p_nfavPPA"}}
+                    ]
+                },
+                "nfavPPA08": {
+                    "subtitle": "Nicht flüssigen/agrammatischen Variante der PPA (nf-avPPA)",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "vorwiegend links posteriore fronto-insuläre Atrophie im MRT erkennbar", "value": 1},
+                        {"text": "vorwiegend links posteriore fronto-insuläre und temporale Hypoperfusion oder Hypometabolismus, dargestellt durch SPECT oder PET", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "kp_kb_nfavPPA"}},
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "kp_b_nfavPPA"}}
+                    ]
+                },
+                "k_svPPA": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "text": "Laut Leitlinie liegt keine svPPA vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kl_svPPA": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "text": "Laut Leitlinie liegt eine klinische Diagnose der svPPA vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Durch bildgebende Verfahren gestützte Diagnose prüfen", "action": {"type": "card", "id": "svPPA04"}},
+                        {"text": "Pathologisch gesicherte Diagnose prüfen", "action": {"type": "card", "id": "svPPA05"}},
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kb_kl_svPPA": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "text": "Laut Leitlinie liegt eine klinische Diagnose der svPPA vor, die aber nicht durch die Bildgebung gesichert werden konnte.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Pathologisch gesicherte Diagnose prüfen", "action": {"type": "card", "id": "svPPA06"}},
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "b_svPPA": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "text": "Laut Leitlinie liegt eine durch Bildgebung gesicherte Diagnose der svPPA vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Pathologisch gesicherte Diagnose prüfen", "action": {"type": "card", "id": "svPPA07"}},
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kp_kl_svPPA": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "text": "Laut Leitlinie liegt eine klinische Diagnose der svPPA vor, die aber nicht pathologisch gesichert werden konnte.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Durch bildgebende Verfahren gestützte Diagnose prüfen", "action": {"type": "card", "id": "svPPA08"}},
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kp_kb_kl_svPPA": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "text": "Laut Leitlinie liegt eine klinische Diagnose der svPPA vor, die aber weder durch die Bildgebung noch pathologisch gesichert werden konnte.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kp_b_svPPA": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "text": "Laut Leitlinie liegt eine durch Bildgebung gesicherte Diagnose der svPPA vor, die aber nicht pathologisch gesichert werden konnte.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "p_svPPA": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "text": "Laut Leitlinie liegt eine pathologisch gesicherte Diagnose der svPPA vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "svPPA01": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "options": {"type": "link", "values": ["svPPA02", "svPPA03"]},
+                    "results": [
+                        {"operation": "less", "value": 2, "return": {"type": "card", "id": "k_svPPA"}},
+                        {"operation": "greater", "value": 1, "return": {"type": "card", "id": "kl_svPPA"}}
+                    ]
+                },
+                "svPPA02": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "question": "Wählen Sie alle zutreffenden Symptome aus:",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "beeinträchtigtes Benennen", "value": 1},
+                        {"text": "beeinträchtigtes Einzelwortverständnis", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 2, "return": {"type": "value", "value": 0}},
+                        {"operation": "equal", "value": 2, "return": {"type": "value", "value": 1}}
+                    ]
+                },
+                "svPPA03": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "question": "Wählen Sie alle zutreffenden Symptome aus:",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "beeinträchtigtes Objektwissen, vor allem für seltenes oder wenig vertrautes Material", "value": 1},
+                        {"text": "Oberflächendyslexie oder Dysgraphie", "value": 1},
+                        {"text": "intaktes Nachsprechen", "value": 1},
+                        {"text": "intakte Sprachproduktion (Grammatik und Sprechmotorik)", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 3, "return": {"type": "value", "value": 0}},
+                        {"operation": "greater", "value": 2, "return": {"type": "value", "value": 1}}
+                    ]
+                },
+                "svPPA04": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "vorwiegend anterior-temporale Atrophie im MRT", "value": 1},
+                        {"text": "vorwiegend anterior-temporale Hypoperfusion oder Hypometabolismus im SPECT oder PET", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "kb_kl_svPPA"}},
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "b_svPPA"}}
+                    ]
+                },
+                "svPPA05": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "additional": "AD (Alzheimer’s disease), FTLD (frontotemporale lobäre Degeneration), TDP (TAR-DNAbindendes Protein 43)",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Histopathologischer Nachweis einer spezifischen neurodegenerativen Pathologie (z.B. FTLD-tau, FTLD-TDP, AD oder andere)", "value": 1},
+                        {"text": "Vorliegen einer bekannten pathogenen Mutation", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "kp_kl_svPPA"}},
+                        {"operation": "greater", "value": 1, "return": {"type": "card", "id": "kp_kl_svPPA"}},
+                        {"operation": "equal", "value": 1, "return": {"type": "card", "id": "p_svPPA"}}
+                    ]
+                },
+                "svPPA06": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "additional": "AD (Alzheimer’s disease), FTLD (frontotemporale lobäre Degeneration), TDP (TAR-DNAbindendes Protein 43)",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Histopathologischer Nachweis einer spezifischen neurodegenerativen Pathologie (z.B. FTLD-tau, FTLD-TDP, AD oder andere)", "value": 1},
+                        {"text": "Vorliegen einer bekannten pathogenen Mutation", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "kp_kb_kl_svPPA"}},
+                        {"operation": "greater", "value": 1, "return": {"type": "card", "id": "kp_kb_kl_svPPA"}},
+                        {"operation": "equal", "value": 1, "return": {"type": "card", "id": "p_svPPA"}}
+                    ]
+                },
+                "svPPA07": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "additional": "AD (Alzheimer’s disease), FTLD (frontotemporale lobäre Degeneration), TDP (TAR-DNAbindendes Protein 43)",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Histopathologischer Nachweis einer spezifischen neurodegenerativen Pathologie (z.B. FTLD-tau, FTLD-TDP, AD oder andere)", "value": 1},
+                        {"text": "Vorliegen einer bekannten pathogenen Mutation", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "kp_b_svPPA"}},
+                        {"operation": "greater", "value": 1, "return": {"type": "card", "id": "kp_b_svPPA"}},
+                        {"operation": "equal", "value": 1, "return": {"type": "card", "id": "p_svPPA"}}
+                    ]
+                },
+                "svPPA08": {
+                    "subtitle": "Semantischen Variante der PPA (svPPA)",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "vorwiegend anterior-temporale Atrophie im MRT", "value": 1},
+                        {"text": "vorwiegend anterior-temporale Hypoperfusion oder Hypometabolismus im SPECT oder PET", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "kp_kb_svPPA"}},
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "kp_b_svPPA"}}
+                    ]
+                },
+                "k_lvPPA": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "text": "Laut Leitlinie liegt keine lvPPA vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kl_lvPPA": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "text": "Laut Leitlinie liegt eine klinische Diagnose der lvPPA vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Durch bildgebende Verfahren gestützte Diagnose prüfen", "action": {"type": "card", "id": "lvPPA04"}},
+                        {"text": "Pathologisch gesicherte Diagnose prüfen", "action": {"type": "card", "id": "lvPPA05"}},
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kb_kl_lvPPA": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "text": "Laut Leitlinie liegt eine klinische Diagnose der lvPPA vor, die aber nicht durch die Bildgebung gesichert werden konnte.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Pathologisch gesicherte Diagnose prüfen", "action": {"type": "card", "id": "lvPPA06"}},
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "b_lvPPA": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "text": "Laut Leitlinie liegt eine durch Bildgebung gesicherte Diagnose der lvPPA vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Pathologisch gesicherte Diagnose prüfen", "action": {"type": "card", "id": "lvPPA07"}},
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kp_kl_lvPPA": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "text": "Laut Leitlinie liegt eine klinische Diagnose der lvPPA vor, die aber nicht pathologisch gesichert werden konnte.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Durch bildgebende Verfahren gestützte Diagnose prüfen", "action": {"type": "card", "id": "lvPPA08"}},
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kp_kb_kl_lvPPA": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "text": "Laut Leitlinie liegt eine klinische Diagnose der lvPPA vor, die aber weder durch die Bildgebung noch pathologisch gesichert werden konnte.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "kp_b_lvPPA": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "text": "Laut Leitlinie liegt eine durch Bildgebung gesicherte Diagnose der lvPPA vor, die aber nicht pathologisch gesichert werden konnte.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "p_lvPPA": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "text": "Laut Leitlinie liegt eine pathologisch gesicherte Diagnose der lvPPA vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Andere PPA-Variante wählen", "action": {"type": "card", "id": "PPA00"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "lvPPA01": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "options": {"type": "link", "values": ["lvPPA02", "lvPPA03"]},
+                    "results": [
+                        {"operation": "less", "value": 2, "return": {"type": "card", "id": "k_lvPPA"}},
+                        {"operation": "greater", "value": 1, "return": {"type": "card", "id": "kl_lvPPA"}}
+                    ]
+                },
+                "lvPPA02": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "question": "Wählen Sie alle zutreffenden Symptome aus:",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Wortfindungsstörungen für Einzelworte in Spontansprache und Benennen", "value": 1},
+                        {"text": "Beeinträchtigtes Nachsprechen auf Satz- und Phrasenebene", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 2, "return": {"type": "value", "value": 0}},
+                        {"operation": "equal", "value": 2, "return": {"type": "value", "value": 1}}
+                    ]
+                },
+                "lvPPA03": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "question": "Wählen Sie alle zutreffenden Symptome aus:",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Phonematische Paraphasien in Spontansprache und Benennen", "value": 1},
+                        {"text": "Intaktes Einzelwortverständnis und Objektwissen", "value": 1},
+                        {"text": "Intakte Sprechmotorik", "value": 1},
+                        {"text": "Kein offenkundiger Agrammatismus", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 3, "return": {"type": "value", "value": 0}},
+                        {"operation": "greater", "value": 2, "return": {"type": "value", "value": 1}}
+                    ]
+                },
+                "lvPPA04": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "vorwiegend links posterior-perisylische oder parietale Atrophie im MRT", "value": 1},
+                        {"text": "parietotemporale (linksseitig betonte) Hypoperfusion oder Hypometabolismus im SPECT oder PET", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "kb_kl_lvPPA"}},
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "b_lvPPA"}}
+                    ]
+                },
+                "lvPPA05": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "additional": "AD (Alzheimer’s disease), FTLD (frontotemporale lobäre Degeneration), TDP (TAR-DNAbindendes Protein 43)",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Histopathologischer Nachweis einer spezifischen neurodegenerativen Pathologie (z.B. FTLD-tau, FTLD-TDP, AD oder andere)", "value": 1},
+                        {"text": "Vorliegen einer bekannten pathogenen Mutation", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "kp_kl_lvPPA"}},
+                        {"operation": "greater", "value": 1, "return": {"type": "card", "id": "kp_kl_lvPPA"}},
+                        {"operation": "equal", "value": 1, "return": {"type": "card", "id": "p_lvPPA"}}
+                    ]
+                },
+                "lvPPA06": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "additional": "AD (Alzheimer’s disease), FTLD (frontotemporale lobäre Degeneration), TDP (TAR-DNAbindendes Protein 43)",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Histopathologischer Nachweis einer spezifischen neurodegenerativen Pathologie (z.B. FTLD-tau, FTLD-TDP, AD oder andere)", "value": 1},
+                        {"text": "Vorliegen einer bekannten pathogenen Mutation", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "kp_kb_kl_lvPPA"}},
+                        {"operation": "greater", "value": 1, "return": {"type": "card", "id": "kp_kb_kl_lvPPA"}},
+                        {"operation": "equal", "value": 1, "return": {"type": "card", "id": "p_lvPPA"}}
+                    ]
+                },
+                "lvPPA07": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "additional": "AD (Alzheimer’s disease), FTLD (frontotemporale lobäre Degeneration), TDP (TAR-DNAbindendes Protein 43)",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Histopathologischer Nachweis einer spezifischen neurodegenerativen Pathologie (z.B. FTLD-tau, FTLD-TDP, AD oder andere)", "value": 1},
+                        {"text": "Vorliegen einer bekannten pathogenen Mutation", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "kp_b_lvPPA"}},
+                        {"operation": "greater", "value": 1, "return": {"type": "card", "id": "kp_b_lvPPA"}},
+                        {"operation": "equal", "value": 1, "return": {"type": "card", "id": "p_lvPPA"}}
+                    ]
+                },
+                "lvPPA08": {
+                    "subtitle": "Logopenische Variante der PPA (lvPPA)",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "vorwiegend links posterior-perisylische oder parietale Atrophie im MRT", "value": 1},
+                        {"text": "parietotemporale (linksseitig betonte) Hypoperfusion oder Hypometabolismus im SPECT oder PET", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "less", "value": 1, "return": {"type": "card", "id": "kp_kb_lvPPA"}},
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "kp_b_lvPPA"}}
+                    ]
+                }
+                
+
+            }
+        },
+        "DLK": {
+            "title": "Leitlinienüberprüfung für die Demenz mit Lewy-Körpern (DLK)",
+            "guideline": {"version": "5.2", "page": "62f."},
+            "start_card": "start_DLK",
+            "cards": {
+                "start_DLK": {
+                    "text": "Dies ist der interaktive Leitlinienchecker für die Demenz mit Lewy-Körpern (DLK).",
+                    "options": {"type": "button", "values": [
+                        {"text": "Start", "action": {"type": "card", "id": "DLK01"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "k_DLK": {
+                    "text": "Laut Leitlinie liegt keine Demenz mit Lewy-Körpern (DLK) vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_GM"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "w_DLK": {
+                    "text": "Laut Leitlinie liegt eine wahrscheinliche Demenz mit Lewy-Körpern (DLK) vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_DLK"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                }
+                ,"m_DLK": {
+                    "text": "Laut Leitlinie liegt eine mögliche Demenz mit Lewy-Körpern (DLK) vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_DLK"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "u_DLK": {
+                    "text": "Laut Leitlinie liegt eine unwahrscheinliche Demenz mit Lewy-Körpern (DLK) vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_DLK"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "DLK01": {
+                    "question": "Welche Merkmale sind aufgetreten?",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Schwankende Kognition mit ausgeprägten Schwankungen der Aufmerksamkeit und Wachsamkeit", "value": 1},
+                        {"text": "Wiederkehrende visuelle Halluzinationen, die in der Regel stark ausgebildet und detailliert sind", "value": 1},
+                        {"text": "REM-Schlaf-Verhaltensstörung, die den kognitiven Symptomen vorausgehen kann", "value": 1},
+                        {"text": "Ein oder mehrere spontane Merkmale des Parkinsonismus: Bradykinese (definiert als Verlangsamung der Bewegungen und Abnahme der Amplitude oder Geschwindigkeit), Ruhetremor oder Steifheit", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "greater", "value": 1, "return": {"type": "card", "id": "w_DLK"}},
+                        {"operation": "equal", "value": 1, "return": {"type": "card", "id": "DLK02"}},
+                        {"operation": "equal", "value": 0, "return": {"type": "card", "id": "DLK03"}}
+                    ]
+                },
+                "DLK02": {
+                    "question": "Welche Biomarker liegt vor?",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Mithilfe von SPECT oder PET nachgewiesene, verminderte Dopamintransporter-Aufnahme in den Basalganglien", "value": 1},
+                        {"text": "Wiederkehrende visuelle Halluzinationen, die in der Regel stark ausgebildet und detailliert sind", "value": 1},
+                        {"text": "Abnormale (geringe Aufnahme) Jod-MIBG-Myokardszintigraphie", "value": 1},
+                        {"text": "Polysomnographische Bestätigung von REM-Schlaf ohne Atonie", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "w_DLK"}},
+                        {"operation": "equal", "value": 0, "return": {"type": "card", "id": "m_DLK"}}
+                    ]
+                },
+                "DLK03": {
+                    "question": "Welche Biomarker liegt vor?",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Mithilfe von SPECT oder PET nachgewiesene, verminderte Dopamintransporter-Aufnahme in den Basalganglien", "value": 1},
+                        {"text": "Wiederkehrende visuelle Halluzinationen, die in der Regel stark ausgebildet und detailliert sind", "value": 1},
+                        {"text": "Abnormale (geringe Aufnahme) Jod-MIBG-Myokardszintigraphie", "value": 1},
+                        {"text": "Polysomnographische Bestätigung von REM-Schlaf ohne Atonie", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "m_DLK"}},
+                        {"operation": "equal", "value": 0, "return": {"type": "card", "id": "DLK04"}}
+                    ]
+                },
+                "DLK04": {
+                    "question": "Was trifft zu?",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "eine andere körperliche Erkrankung oder Erkrankung des Gehirns, einschließlich zerebrovaskulärer Erkrankungen, vorliegt, die das klinische Bild ganz oder teilweise erklären könnte, obwohl dies eine DLK-Diagnose nicht ausschließt und auf gemischte oder multiple Pathologien hinweisen könnte, die zum klinischen Bild beitragen", "value": 1},
+                        {"text": "Parkinson-Merkmale die einzigen klinischen Hauptmerkmale sind und zum ersten Mal in einem Stadium schwerer Demenz auftreten", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "u_DLK"}},
+                        {"operation": "equal", "value": 0, "return": {"type": "card", "id": "k_DLK"}}
+                    ]
+                }
+            }
+        },
+        "PD": {
+            "title": "Leitlinienüberprüfung für die Demenz bei Parkinson-Krankheit",
+            "guideline": {"version": "5.2", "page": "68ff"},
+            "start_card": "start_PD",
+            "cards": {
+                "start_PD": {
+                    "text": "Dies ist der interaktive Leitlinienchecker für die Demenz mit Lewy-Körpern (DLK).",
+                    "options": {"type": "button", "values": [
+                        {"text": "Start", "action": {"type": "card", "id": "PD01"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "k_PD": {
+                    "text": "Laut Leitlinie liegt keine Parkinson-Demenz vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_PD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "w_PD": {
+                    "text": "Laut Leitlinie liegt eine wahrscheinliche Parkinson-Demenz vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_PD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                }
+                ,
+                "m_PD": {
+                    "text": "Laut Leitlinie liegt eine mögliche Parkinson-Demenz vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_PD"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "PD01": {
+                    "question": "Liegen Diagnose eines M. Parkinson entsprechend den „Queen Square Brain Bank“-Kriterien vor?",
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "PD02"}},
+                        {"text": "Nein", "action": {"type": "group", "id": "k_PD"}}
+                    ]}
+                },
+                "PD02": {
+                    "question": "Liegt ein demenzielles Syndrom mit schleichendem Beginn und langsamer Progression, welches sich bei bestehender Diagnose eines Parkinson-Syndroms entwickelt und sich, basierend auf Anamnese, der klinischen und psychischen Untersuchung, wie folgt darstellt vor?",
+                    "list": [
+                        "Einschränkungen in mehr als einer kognitiven Domäne",
+                        "Abnahme der Kognition im Vergleich zum prämorbiden Niveau",
+                        "Die Defizite sind ausgeprägt genug, um zu Einschränkungen im täglichen Leben (sozial, beruflich oder in der eigenen Versorgung) zu führen, unabhängig von Einschränkungen, die motorischen oder autonomen Symptomen zuzuordnen sind."
+                    ],
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "PD03"}},
+                        {"text": "Nein", "action": {"type": "group", "id": "k_PD"}}
+                    ]}
+                },
+                "PD03": {
+                    "question": "Was trifft zu?",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Kognitive und Verhaltenssymptome treten allein im Zusammenhang mit anderen Symptomen auf, z.B. bei akuter Verwirrtheit aufgrund einer systemischen Erkrankung, Medikamentennebenwirkungen", "value": 1},
+                        {"text": "Depression", "value": 1},
+                        {"text": "Merkmale, die mit der Diagnose einer vaskulären Demenz vereinbar sind", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "k_PD"}},
+                        {"operation": "equal", "value": 0, "return": {"type": "card", "id": "PD04"}}
+                    ]
+                },
+                "PD04": {
+                    "question": "Was?",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Vorhandensein anderer möglicher Ursachen der kognitiven Beeinträchtigung, wie z. B. Nachweis relevanter vaskulärer Läsionen in der Bildgebung.", "value": 1},
+                        {"text": "Der zeitliche Abstand zwischen Entwicklung der motorischen und der kognitiven Symptome ist nicht bekannt.", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "m_PD"}},
+                        {"operation": "equal", "value": 0, "return": {"type": "card", "id": "PD05"}}
+                    ]
+                },
+                "PD05": {
+                    "question": "Liegt ein typisches Profil der kognitiven Einschränkungen vorliegen mit Nachweis von Defiziten in mindestens zwei Domänen vor?",
+                    "list": [
+                        "Aufmerksamkeit: Beeinträchtigungen der spontanen und fokussierten Aufmerksamkeit, schlechte Leistungen in Aufmerksamkeitsaufgaben; die Leistungen können im Tagesverlauf und von Tag zu Tag fluktuieren",
+                        "Exekutive Funktionen: Beeinträchtigungen bei Aufgaben, die Initiierung, Planung, Konzeptbildung, Regellernen, kognitive Flexibilität (Set-Shifting und Set-Maintenance) erfordern; beeinträchtigte mentale Geschwindigkeit (Bradyphrenie)",
+                        "Visuell-räumliche Funktionen: Beeinträchtigung bei Aufgaben, die räumliche Orientierung, Wahrnehmung oder Konstruktion verlangen", "value",
+                        "Gedächtnis: Beeinträchtigungen beim freien Abruf kürzlich stattgefundener Ereignisse oder beim Erlernen neuer Inhalte; das Erinnern gelingt besser nach Präsentation von Hinweisen, das Wiedererkennen ist meistens weniger beeinträchtigt als der freie Abruf", "value"
+                    ],
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "PD06"}},
+                        {"text": "Nein", "action": {"type": "group", "id": "PD07"}}
+                    ]}
+                },
+                "PD06": {
+                    "question": "Welche Verhaltensmerkmale liegen vor?",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Apathie: verringerte Spontaneität, Verlust von Motivation, Interesse und Eigenleistung", "value": 1},
+                        {"text": "Persönlichkeitsveränderungen und Stimmungsänderungen einschl. depressiver Symptome und Angst", "value": 1},
+                        {"text": "Halluzinationen, vorwiegend visuell, üblicherweise komplexe, ausgestaltete Wahrnehmung von Personen, Tieren oder Objekten", "value": 1},
+                        {"text": "Wahn, meist paranoid gefärbt, wie z. B. hinsichtlich Untreue oder Anwesenheit unwillkommener Gäste", "value": 1},
+                        {"text": "verstärkte Tagesmüdigkeit", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "w_PD"}},
+                        {"operation": "equal", "value": 0, "return": {"type": "card", "id": "PD07"}}
+                    ]
+                },
+                "PD07": {
+                    "question": "Liegt ein atypisches Profil der kognitiven Beeinträchtigung in einer oder mehreren Domänen, wie z. B. motorische oder sensomotorische Aphasie oder alleinige Störung der Merkfähigkeit (Gedächtnisleistung verbessert sich nicht nach Hilfeleistungen oder in der Wiedererkennung), bei erhaltener Aufmerksamkeit Verhaltensmerkmale vor?",
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "m_PD"}},
+                        {"text": "Nein", "action": {"type": "group", "id": "k_PD"}}
+                    ]}
+                }
+            }
+        },
+        "LATE": {
+            "title": "Leitlinienüberprüfung für die  limbisch-prädominante, altersassoziierte TDP-43-Enzephalopathie (LATE)",
+            "guideline": {"version": "5.2", "page": "70ff"},
+            "start_card": "start_LATE",
+            "cards": {
+                "start_LATE": {
+                    "text": "Dies ist der interaktive Leitlinienchecker für die gemischte Demenz",
+                    "options": {"type": "button", "values": [
+                        {"text": "Start Primäre LATE", "action": {"type": "card", "id": "LATE01"}},
+                        {"text": "Start mögliche LATE mit gleichzeitiger Alzheimer-Krankheit", "action":  {"type": "card", "id": "ADLATE01"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "k_LATE": {
+                    "text": "Laut Leitlinie liegt keine LATE vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_LATE"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "m_LATE": {
+                    "text": "Laut Leitlinie liegt eine mögliche LATE vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_LATE"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "w_LATE": {
+                    "text": "Laut Leitlinie liegt eine wahrscheinliche LATE vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_LATE"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "LATE01": {
+                    "question": "Liegt ein primäres amnestisches Syndrom mit typischer Ausprägung für mediotemporale Schädigung vor?",
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "LATE02"}},
+                        {"text": "Nein", "action": {"type": "group", "id": "k_LATE"}}
+                    ]}
+                },
+                "LATE02": {
+                    "question": "Sind andere kognitive Domänen weitgehend bis viel später im Verlauf in der Funktion erhalten?",
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "LATE03"}},
+                        {"text": "Nein", "action": {"type": "group", "id": "k_LATE"}}
+                    ]}
+                },
+                "LATE03": {
+                    "question": "Liegt eine signifikante Hippocampusatrophie vor?",
+                    "additional": "(im Vergleich zur globalen Atrophie disproportional)",
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "LATE04"}},
+                        {"text": "Nein", "action": {"type": "group", "id": "k_LATE"}}
+                    ]}
+                },
+                "LATE04": {
+                    "question": "Welche Merkmale sind positiv?",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Amyloid-PET", "value": 1},
+                        {"text": "Liquor Aβ42/40-Ratio", "value": 1},
+                        {"text": "Liquor pTau181/Aβ42", "value": 1},
+                        {"text": "Gesamt-Tau/Aβ42", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "LATE05"}},
+                        {"operation": "equal", "value": 0, "return": {"type": "card", "id": "w_LATE"}}
+                    ]
+                },
+                "LATE05": {
+                    "question": "Welche Merkmale sind positiv?",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "MTL Tau-PET", "value": 1},
+                        {"text": "Liquor pTau181", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "k_LATE"}},
+                        {"operation": "equal", "value": 0, "return": {"type": "card", "id": "m_LATE"}}
+                    ]
+                },
+                "k_ADLATE": {
+                    "text": "Laut Leitlinie liegt keine LATE mit gleichzeitiger Alzheimer-Krankheit vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_LATE"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "m_ADLATE": {
+                    "text": "Laut Leitlinie liegt eine mögliche LATE mit gleichzeitiger Alzheimer-Krankheit vor.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Neustarten", "action": {"type": "card", "id": "start_LATE"}},
+                        {"text": "Leitlinienauswahl", "action": {"type": "group", "id": "Demenz"}}
+                    ]}
+                },
+                "ADLATE01": {
+                    "question": "Gibt es ein fortschreitendes amnestisches Syndrom, dass zusätzlich andere Domänen umfasst?",
+                    "additional": "Der Gedächtnisverlust kann im Vergleich zu anderen kognitiven Domänen besonders schwerwiegend sein.",
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "ADLATE02"}},
+                        {"text": "Nein", "action": {"type": "card", "id": "k_ADLATE"}}
+                    ]}
+                },
+                "ADLATE02": {
+                    "question": "Ist der Verlauf schneller als bei typischer Alzheimer-Krankheit allein?",
+                    "options": {"type": "button", "values": [
+                        {"text": "Ja", "action": {"type": "card", "id": "ADLATE03"}},
+                        {"text": "Nein", "action": {"type": "card", "id": "k_ADLATE"}}
+                    ]}
+                },
+                "ADLATE03": {
+                    "question": "Was trifft zu?",
+                    "options": {"type": "checkbox", "values": [
+                        {"text": "Ausgeprägte hippocampale Atrophie im Rahmen einer leichten symptomatischen Demenz.", "value": 1},
+                        {"text": "MTL-/Hippocampus-Atrophie die in keinem Verhältnis zum Grad der pathologischen TauBelastung steht, gemessen durch Tau-PET", "value": 1},
+                        {"text": "FDG-PET mit erhöhtem inferior-temporalen/MTL-Verhältnis.", "value": 1}
+                    ]},
+                    "results": [
+                        {"operation": "greater", "value": 0, "return": {"type": "card", "id": "m_ADLATE"}},
+                        {"operation": "equal", "value": 0, "return": {"type": "card", "id": "k_ADLATE"}}
+                    ]
+                }
+            }
+        }
+
+    }
+}

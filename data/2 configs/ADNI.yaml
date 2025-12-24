@@ -1,0 +1,63 @@
+file_name: 'data/1 processed/ADNI/adni_train.csv'
+
+save_model_path: 'data/3 models/ADNI.pkl'
+save_plot_path: 'data/1 processed/ADNI/ADNI.svg'
+
+drop_nan: true
+
+edges:
+  file_name: 'data/1 processed/ADNI/ADNI_edges.csv'
+  create_file: false
+
+rename_nodes: true
+  
+diagnosis_nodes:
+  DX: Diagnose
+
+data_nodes:
+  # General
+  AGE_bin: Alter
+  PTGENDER: Geschlecht
+  PTMARRY: Familienstand
+  PTEDUCAT_bin: Bildungsjahre
+
+
+  # Neuropsychology
+  ADAS11_bin: ADAS11
+  ADAS13_bin: ADAS13
+  EcogPtTotal_bin: EcogPtTotal
+  EcogSPTotal_bin: EcogSPTotal
+  CDRSB_bin: CDRSB
+  FAQ_bin: FAQ
+  MMSE_bin: MMSE
+  MOCA_bin: MOCA
+  RAVLT_forgetting_bin: RAVLT-forgetting
+  RAVLT_immediate_bin: RAVLT-immediate
+  RAVLT_learning_bin: RAVLT-learning
+  TRABSCOR_bin: TMT B
+  LDELTOTAL_bin: LDELTOTAL
+
+  # Liquor
+  ABETA_bin: Beta-Amyloid 42
+  PTAU_bin: Phospho-Tau-181
+  TAU_bin: Gesamt-Tau
+  
+  
+  # Genetics
+  APOE4_bin: ApoE4
+
+
+  # Imaging
+  AV45_bin: AV45
+  Entorhinal_bin: Entorhinal
+  Entorhinal_ICV_bin: Ratio Entorhinal-ICV
+  Fusiform_bin: Fusiform
+  Fusiform_ICV_bin: Ratio Fusiform-ICV
+  Hippocampus_bin: Hippocampus
+  Hippocampus_ICV_bin: Ratio Hippocampus-ICV
+  ICV_bin: ICV
+  MidTemp_bin: MidTemp
+  MidTemp_ICV_bin: Ratio MidTemp-ICV
+  Ventricles_bin: Ventrikel
+  Ventricles_ICV_bin: Ratio Ventrikel-ICV
+  WholeBrain_bin: Gesamtgehirn
