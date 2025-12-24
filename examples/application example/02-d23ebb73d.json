@@ -1,0 +1,22 @@
+{
+  "patient_id": "d23ebb73d",
+  "patient_surname": "Mustermann",
+  "patient_name": "Erika",
+  "patient_bday": "",
+  "patient_gender": "Weiblich",
+  "interaction_data": {
+    "selected_model": "ADNI",
+    "case_counter": 3,
+    "case_list": [
+      0
+    ]
+  },
+  "cases_data": [
+    {
+      "case0_allgemein_alter": "66.5",
+      "case0_allgemein_geschlecht": "Weiblich",
+      "case0_neuropsychologische_tests_adas13": "43",
+      "case0_neuropsychologische_tests_mmse": "16"
+    }
+  ]
+}
